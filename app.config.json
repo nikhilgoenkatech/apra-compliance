@@ -1,0 +1,10 @@
+{
+  "environmentUrl": "https://ykd61701.sprint.apps.dynatracelabs.com/",
+  "app": {
+    "name": "apra",
+    "version": "0.0.0",
+    "description": "A starting project with routing, fetching data, and charting",
+    "id": "my.apra",
+    "scopes": [{ "name": "storage:logs:read", "comment": "default template" }, { "name": "storage:buckets:read", "comment": "default template" }]
+  }
+}
