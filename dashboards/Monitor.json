@@ -1,0 +1,2112 @@
+{
+  "metadata": {
+    "configurationVersions": [
+      7
+    ],
+    "clusterVersion": "1.303.42.20241021-231645"
+  },
+  "id": "4302a03c-6c8c-4961-87b3-bb68c99922cf",
+  "dashboardMetadata": {
+    "name": "Operational Risk Analysis",
+    "shared": true,
+    "owner": "nikhil.goenka@dynatrace.com",
+    "popularity": 1,
+    "hasConsistentColors": false
+  },
+  "tiles": [
+    {
+      "name": "Host health1",
+      "tileType": "HOSTS",
+      "configured": true,
+      "bounds": {
+        "top": 304,
+        "left": 1596,
+        "width": 342,
+        "height": 152
+      },
+      "tileFilter": {},
+      "isAutoRefreshDisabled": false,
+      "chartVisible": true
+    },
+    {
+      "name": "Problems",
+      "tileType": "OPEN_PROBLEMS",
+      "configured": true,
+      "bounds": {
+        "top": 304,
+        "left": 0,
+        "width": 152,
+        "height": 152
+      },
+      "tileFilter": {},
+      "isAutoRefreshDisabled": false
+    },
+    {
+      "name": "",
+      "tileType": "HOSTS",
+      "configured": true,
+      "bounds": {
+        "top": 456,
+        "left": 0,
+        "width": 152,
+        "height": 152
+      },
+      "tileFilter": {},
+      "isAutoRefreshDisabled": false,
+      "filterConfig": {
+        "type": "HOST",
+        "customName": "Hosts",
+        "defaultName": "Hosts",
+        "chartConfig": {
+          "legendShown": true,
+          "type": "TIMESERIES",
+          "series": [],
+          "resultMetadata": {}
+        },
+        "filtersPerEntityType": {
+          "HOST": {
+            "PROBLEM_IMPACT": [
+              "true"
+            ]
+          }
+        }
+      },
+      "chartVisible": true
+    },
+    {
+      "name": "",
+      "tileType": "SERVICES",
+      "configured": true,
+      "bounds": {
+        "top": 608,
+        "left": 0,
+        "width": 152,
+        "height": 190
+      },
+      "tileFilter": {},
+      "isAutoRefreshDisabled": false,
+      "filterConfig": {
+        "type": "SERVICE",
+        "customName": "Services",
+        "defaultName": "Services",
+        "chartConfig": {
+          "legendShown": true,
+          "type": "TIMESERIES",
+          "series": [],
+          "resultMetadata": {}
+        },
+        "filtersPerEntityType": {
+          "SERVICE": {
+            "PROBLEM_IMPACT": [
+              "true"
+            ]
+          }
+        }
+      },
+      "chartVisible": true
+    },
+    {
+      "name": "",
+      "tileType": "DATABASES_OVERVIEW",
+      "configured": true,
+      "bounds": {
+        "top": 798,
+        "left": 0,
+        "width": 152,
+        "height": 190
+      },
+      "tileFilter": {},
+      "isAutoRefreshDisabled": false,
+      "filterConfig": {
+        "type": "DATABASE",
+        "customName": "Databases",
+        "defaultName": "Databases",
+        "chartConfig": {
+          "legendShown": true,
+          "type": "TIMESERIES",
+          "series": [],
+          "resultMetadata": {}
+        },
+        "filtersPerEntityType": {
+          "DATABASE": {
+            "PROBLEM_IMPACT": [
+              "true"
+            ]
+          }
+        }
+      },
+      "chartVisible": true
+    },
+    {
+      "name": "Application health",
+      "tileType": "APPLICATIONS",
+      "configured": true,
+      "bounds": {
+        "top": 304,
+        "left": 190,
+        "width": 304,
+        "height": 152
+      },
+      "tileFilter": {},
+      "isAutoRefreshDisabled": false,
+      "chartVisible": true
+    },
+    {
+      "name": "Synthetic monitor health",
+      "tileType": "SYNTHETIC_TESTS",
+      "configured": true,
+      "bounds": {
+        "top": 456,
+        "left": 190,
+        "width": 304,
+        "height": 152
+      },
+      "tileFilter": {},
+      "isAutoRefreshDisabled": false,
+      "chartVisible": true
+    },
+    {
+      "name": "Top web applications",
+      "tileType": "APPLICATIONS_MOST_ACTIVE",
+      "configured": true,
+      "bounds": {
+        "top": 304,
+        "left": 494,
+        "width": 304,
+        "height": 304
+      },
+      "tileFilter": {
+        "managementZone": {
+          "id": "all",
+          "name": "All"
+        }
+      },
+      "isAutoRefreshDisabled": false
+    },
+    {
+      "name": "World map",
+      "tileType": "APPLICATION_WORLDMAP",
+      "configured": true,
+      "bounds": {
+        "top": 608,
+        "left": 190,
+        "width": 380,
+        "height": 304
+      },
+      "tileFilter": {},
+      "isAutoRefreshDisabled": false,
+      "assignedEntities": [
+        "GEOLOCATION-0000000000000000",
+        "WORLD"
+      ],
+      "metric": "APDEX"
+    },
+    {
+      "name": "User Sessions Query",
+      "tileType": "DTAQL",
+      "configured": true,
+      "bounds": {
+        "top": 608,
+        "left": 570,
+        "width": 228,
+        "height": 304
+      },
+      "tileFilter": {},
+      "isAutoRefreshDisabled": false,
+      "customName": "User sessions query results",
+      "query": "SELECT usersession.city AS 'City', AVG(useraction.duration) AS \"Duration (ms)\" FROM usersession WHERE NOT usersession.city=NULL AND usersession.country=\"United States\" GROUP BY usersession.city ORDER BY AVG(useraction.duration) DESC LIMIT 5",
+      "type": "TABLE",
+      "limit": 50
+    },
+    {
+      "name": "Live user activity",
+      "tileType": "UEM_ACTIVE_SESSIONS",
+      "configured": true,
+      "bounds": {
+        "top": 912,
+        "left": 190,
+        "width": 304,
+        "height": 304
+      },
+      "tileFilter": {},
+      "isAutoRefreshDisabled": false
+    },
+    {
+      "name": "Most used 3rd parties",
+      "tileType": "THIRD_PARTY_MOST_ACTIVE",
+      "configured": true,
+      "bounds": {
+        "top": 912,
+        "left": 494,
+        "width": 304,
+        "height": 304
+      },
+      "tileFilter": {},
+      "isAutoRefreshDisabled": false,
+      "assignedEntities": []
+    },
+    {
+      "name": "Service health",
+      "tileType": "SERVICES",
+      "configured": true,
+      "bounds": {
+        "top": 304,
+        "left": 798,
+        "width": 304,
+        "height": 152
+      },
+      "tileFilter": {},
+      "isAutoRefreshDisabled": false,
+      "chartVisible": true
+    },
+    {
+      "name": "",
+      "tileType": "SERVICES",
+      "configured": true,
+      "bounds": {
+        "top": 304,
+        "left": 1102,
+        "width": 228,
+        "height": 152
+      },
+      "tileFilter": {},
+      "isAutoRefreshDisabled": false,
+      "filterConfig": {
+        "type": "SERVICE",
+        "customName": "Java Services",
+        "defaultName": "Services",
+        "chartConfig": {
+          "legendShown": true,
+          "type": "TIMESERIES",
+          "series": [],
+          "resultMetadata": {}
+        },
+        "filtersPerEntityType": {
+          "SERVICE": {
+            "SERVICE_SOFTWARE_TECH": [
+              "JAVA"
+            ]
+          }
+        }
+      },
+      "chartVisible": true
+    },
+    {
+      "name": "Average Load Action Duration",
+      "tileType": "DATA_EXPLORER",
+      "configured": true,
+      "bounds": {
+        "top": 1216,
+        "left": 190,
+        "width": 380,
+        "height": 228
+      },
+      "tileFilter": {},
+      "isAutoRefreshDisabled": false,
+      "customName": "Average Load Action Duration",
+      "queries": [
+        {
+          "id": "A",
+          "metric": "builtin:apps.web.actionDuration.load.browser",
+          "spaceAggregation": "AVG",
+          "splitBy": [],
+          "filterBy": {
+            "filterOperator": "AND",
+            "nestedFilters": [],
+            "criteria": []
+          },
+          "rate": "NONE",
+          "enabled": true
+        }
+      ],
+      "visualConfig": {
+        "type": "GRAPH_CHART",
+        "global": {
+          "hideLegend": false
+        },
+        "rules": [
+          {
+            "matcher": "A:",
+            "properties": {
+              "seriesType": "LINE"
+            },
+            "seriesOverrides": [
+              {
+                "name": "Action duration - load action (by browser) [web]",
+                "color": "#008cdb"
+              }
+            ]
+          }
+        ],
+        "axes": {
+          "xAxis": {
+            "visible": true
+          },
+          "yAxes": [
+            {
+              "visible": true,
+              "min": "AUTO",
+              "max": "AUTO",
+              "position": "LEFT",
+              "queryIds": [
+                "A"
+              ],
+              "defaultAxis": true
+            }
+          ]
+        },
+        "thresholds": []
+      },
+      "metricExpressions": [
+        "resolution=null&(builtin:apps.web.actionDuration.load.browser:splitBy():avg:sort(value(avg,descending)):limit(20)):limit(100):names"
+      ]
+    },
+    {
+      "name": "Average Load Action Duration",
+      "tileType": "DATA_EXPLORER",
+      "configured": true,
+      "bounds": {
+        "top": 1216,
+        "left": 570,
+        "width": 228,
+        "height": 228
+      },
+      "tileFilter": {},
+      "isAutoRefreshDisabled": false,
+      "customName": "Average Load Action Duration",
+      "queries": [
+        {
+          "id": "A",
+          "metric": "builtin:apps.web.actionDuration.load.browser",
+          "spaceAggregation": "AVG",
+          "splitBy": [],
+          "filterBy": {
+            "filterOperator": "AND",
+            "nestedFilters": [],
+            "criteria": []
+          },
+          "rate": "NONE",
+          "enabled": true
+        }
+      ],
+      "visualConfig": {
+        "type": "TOP_LIST",
+        "global": {
+          "hideLegend": false
+        },
+        "rules": [
+          {
+            "matcher": "A:",
+            "properties": {
+              "seriesType": "LINE"
+            },
+            "seriesOverrides": [
+              {
+                "name": "Action duration - load action (by browser) [web]",
+                "color": "#008cdb"
+              }
+            ]
+          }
+        ],
+        "axes": {
+          "xAxis": {
+            "visible": true
+          },
+          "yAxes": [
+            {
+              "visible": true,
+              "min": "AUTO",
+              "max": "AUTO",
+              "position": "LEFT",
+              "queryIds": [
+                "A"
+              ],
+              "defaultAxis": true
+            }
+          ]
+        },
+        "thresholds": []
+      },
+      "metricExpressions": [
+        "resolution=Inf&(builtin:apps.web.actionDuration.load.browser:splitBy():avg:sort(value(avg,descending)):limit(20)):limit(100):names"
+      ]
+    },
+    {
+      "name": "Average XHR Action Duration",
+      "tileType": "DATA_EXPLORER",
+      "configured": true,
+      "bounds": {
+        "top": 1444,
+        "left": 190,
+        "width": 380,
+        "height": 228
+      },
+      "tileFilter": {},
+      "isAutoRefreshDisabled": false,
+      "customName": "Average XHR Action Duration",
+      "queries": [
+        {
+          "id": "A",
+          "metric": "builtin:apps.web.actionDuration.xhr.browser",
+          "spaceAggregation": "AVG",
+          "splitBy": [],
+          "filterBy": {
+            "filterOperator": "AND",
+            "nestedFilters": [],
+            "criteria": []
+          },
+          "rate": "NONE",
+          "enabled": true
+        }
+      ],
+      "visualConfig": {
+        "type": "GRAPH_CHART",
+        "global": {
+          "hideLegend": false
+        },
+        "rules": [
+          {
+            "matcher": "A:",
+            "properties": {
+              "seriesType": "LINE"
+            },
+            "seriesOverrides": [
+              {
+                "name": "Action duration - XHR action (by browser) [web]",
+                "color": "#008cdb"
+              }
+            ]
+          }
+        ],
+        "axes": {
+          "xAxis": {
+            "visible": true
+          },
+          "yAxes": [
+            {
+              "visible": true,
+              "min": "AUTO",
+              "max": "AUTO",
+              "position": "LEFT",
+              "queryIds": [
+                "A"
+              ],
+              "defaultAxis": true
+            }
+          ]
+        },
+        "thresholds": []
+      },
+      "metricExpressions": [
+        "resolution=null&(builtin:apps.web.actionDuration.xhr.browser:splitBy():avg:sort(value(avg,descending)):limit(20)):limit(100):names"
+      ]
+    },
+    {
+      "name": "Average XHR Action Duration",
+      "tileType": "DATA_EXPLORER",
+      "configured": true,
+      "bounds": {
+        "top": 1444,
+        "left": 570,
+        "width": 228,
+        "height": 228
+      },
+      "tileFilter": {},
+      "isAutoRefreshDisabled": false,
+      "customName": "Average XHR Action Duration",
+      "queries": [
+        {
+          "id": "A",
+          "metric": "builtin:apps.web.actionDuration.xhr.browser",
+          "spaceAggregation": "AVG",
+          "splitBy": [],
+          "filterBy": {
+            "filterOperator": "AND",
+            "nestedFilters": [],
+            "criteria": []
+          },
+          "rate": "NONE",
+          "enabled": true
+        }
+      ],
+      "visualConfig": {
+        "type": "TOP_LIST",
+        "global": {
+          "hideLegend": false
+        },
+        "rules": [
+          {
+            "matcher": "A:",
+            "properties": {
+              "seriesType": "LINE"
+            },
+            "seriesOverrides": [
+              {
+                "name": "Action duration - XHR action (by browser) [web]",
+                "color": "#008cdb"
+              }
+            ]
+          }
+        ],
+        "axes": {
+          "xAxis": {
+            "visible": true
+          },
+          "yAxes": [
+            {
+              "visible": true,
+              "min": "AUTO",
+              "max": "AUTO",
+              "position": "LEFT",
+              "queryIds": [
+                "A"
+              ],
+              "defaultAxis": true
+            }
+          ]
+        },
+        "thresholds": []
+      },
+      "metricExpressions": [
+        "resolution=Inf&(builtin:apps.web.actionDuration.xhr.browser:splitBy():avg:sort(value(avg,descending)):limit(20)):limit(100):names"
+      ]
+    },
+    {
+      "name": "Request count",
+      "tileType": "DATA_EXPLORER",
+      "configured": true,
+      "bounds": {
+        "top": 456,
+        "left": 798,
+        "width": 456,
+        "height": 304
+      },
+      "tileFilter": {},
+      "isAutoRefreshDisabled": false,
+      "customName": "Request count",
+      "queries": [
+        {
+          "id": "A",
+          "metric": "builtin:service.requestCount.total",
+          "spaceAggregation": "VALUE",
+          "splitBy": [
+            "dt.entity.service"
+          ],
+          "filterBy": {
+            "filterOperator": "AND",
+            "nestedFilters": [],
+            "criteria": []
+          },
+          "rate": "NONE",
+          "enabled": true
+        }
+      ],
+      "visualConfig": {
+        "type": "GRAPH_CHART",
+        "global": {
+          "hideLegend": false
+        },
+        "rules": [
+          {
+            "matcher": "A:",
+            "properties": {
+              "seriesType": "LINE"
+            },
+            "seriesOverrides": []
+          }
+        ],
+        "axes": {
+          "xAxis": {
+            "visible": true
+          },
+          "yAxes": [
+            {
+              "visible": true,
+              "min": "AUTO",
+              "max": "AUTO",
+              "position": "LEFT",
+              "queryIds": [
+                "A"
+              ],
+              "defaultAxis": true
+            }
+          ]
+        },
+        "thresholds": []
+      },
+      "metricExpressions": [
+        "resolution=null&(builtin:service.requestCount.total:splitBy(\"dt.entity.service\"):value:sort(value(sum,descending)):limit(20)):limit(100):names"
+      ]
+    },
+    {
+      "name": "",
+      "tileType": "SERVICES",
+      "configured": true,
+      "bounds": {
+        "top": 304,
+        "left": 1330,
+        "width": 228,
+        "height": 152
+      },
+      "tileFilter": {},
+      "isAutoRefreshDisabled": false,
+      "filterConfig": {
+        "type": "SERVICE",
+        "customName": "3rd Party Services",
+        "defaultName": "Services",
+        "chartConfig": {
+          "legendShown": true,
+          "type": "TIMESERIES",
+          "series": [],
+          "resultMetadata": {}
+        },
+        "filtersPerEntityType": {
+          "SERVICE": {
+            "SERVICE_EXTERNAL_DEPENDENCY": [
+              "THIRDPARTY"
+            ]
+          }
+        }
+      },
+      "chartVisible": true
+    },
+    {
+      "name": "Request count",
+      "tileType": "DATA_EXPLORER",
+      "configured": true,
+      "bounds": {
+        "top": 456,
+        "left": 1254,
+        "width": 304,
+        "height": 304
+      },
+      "tileFilter": {},
+      "isAutoRefreshDisabled": false,
+      "customName": "Request count",
+      "queries": [
+        {
+          "id": "A",
+          "metric": "builtin:service.requestCount.total",
+          "spaceAggregation": "VALUE",
+          "splitBy": [
+            "dt.entity.service"
+          ],
+          "filterBy": {
+            "filterOperator": "AND",
+            "nestedFilters": [],
+            "criteria": []
+          },
+          "rate": "NONE",
+          "enabled": true
+        }
+      ],
+      "visualConfig": {
+        "type": "TOP_LIST",
+        "global": {
+          "hideLegend": false
+        },
+        "rules": [
+          {
+            "matcher": "A:",
+            "properties": {
+              "seriesType": "LINE"
+            },
+            "seriesOverrides": []
+          }
+        ],
+        "axes": {
+          "xAxis": {
+            "visible": true
+          },
+          "yAxes": [
+            {
+              "visible": true,
+              "min": "AUTO",
+              "max": "AUTO",
+              "position": "LEFT",
+              "queryIds": [
+                "A"
+              ],
+              "defaultAxis": true
+            }
+          ]
+        },
+        "thresholds": []
+      },
+      "metricExpressions": [
+        "resolution=Inf&(builtin:service.requestCount.total:splitBy(\"dt.entity.service\"):value:sort(value(sum,descending)):limit(20)):limit(100):names"
+      ]
+    },
+    {
+      "name": "Average Response time",
+      "tileType": "DATA_EXPLORER",
+      "configured": true,
+      "bounds": {
+        "top": 1064,
+        "left": 798,
+        "width": 456,
+        "height": 304
+      },
+      "tileFilter": {},
+      "isAutoRefreshDisabled": false,
+      "customName": "Average Response time",
+      "queries": [
+        {
+          "id": "A",
+          "metric": "builtin:service.response.time",
+          "spaceAggregation": "AVG",
+          "splitBy": [
+            "dt.entity.service"
+          ],
+          "filterBy": {
+            "filterOperator": "AND",
+            "nestedFilters": [],
+            "criteria": []
+          },
+          "rate": "NONE",
+          "enabled": true
+        }
+      ],
+      "visualConfig": {
+        "type": "GRAPH_CHART",
+        "global": {
+          "hideLegend": false
+        },
+        "rules": [
+          {
+            "matcher": "A:",
+            "properties": {
+              "seriesType": "LINE"
+            },
+            "seriesOverrides": []
+          }
+        ],
+        "axes": {
+          "xAxis": {
+            "visible": true
+          },
+          "yAxes": [
+            {
+              "visible": true,
+              "min": "AUTO",
+              "max": "AUTO",
+              "position": "LEFT",
+              "queryIds": [
+                "A"
+              ],
+              "defaultAxis": true
+            }
+          ]
+        },
+        "thresholds": []
+      },
+      "metricExpressions": [
+        "resolution=null&(builtin:service.response.time:splitBy(\"dt.entity.service\"):avg:sort(value(avg,descending)):limit(20)):limit(100):names"
+      ]
+    },
+    {
+      "name": "Average Response time",
+      "tileType": "DATA_EXPLORER",
+      "configured": true,
+      "bounds": {
+        "top": 1064,
+        "left": 1254,
+        "width": 304,
+        "height": 304
+      },
+      "tileFilter": {},
+      "isAutoRefreshDisabled": false,
+      "customName": "Average Response time",
+      "queries": [
+        {
+          "id": "A",
+          "metric": "builtin:service.response.time",
+          "spaceAggregation": "AVG",
+          "splitBy": [
+            "dt.entity.service"
+          ],
+          "filterBy": {
+            "filterOperator": "AND",
+            "nestedFilters": [],
+            "criteria": []
+          },
+          "rate": "NONE",
+          "enabled": true
+        }
+      ],
+      "visualConfig": {
+        "type": "TOP_LIST",
+        "global": {
+          "hideLegend": false
+        },
+        "rules": [
+          {
+            "matcher": "A:",
+            "properties": {
+              "seriesType": "LINE"
+            },
+            "seriesOverrides": []
+          }
+        ],
+        "axes": {
+          "xAxis": {
+            "visible": true
+          },
+          "yAxes": [
+            {
+              "visible": true,
+              "min": "AUTO",
+              "max": "AUTO",
+              "position": "LEFT",
+              "queryIds": [
+                "A"
+              ],
+              "defaultAxis": true
+            }
+          ]
+        },
+        "thresholds": []
+      },
+      "metricExpressions": [
+        "resolution=Inf&(builtin:service.response.time:splitBy(\"dt.entity.service\"):avg:sort(value(avg,descending)):limit(20)):limit(100):names"
+      ]
+    },
+    {
+      "name": "99th% Response time",
+      "tileType": "DATA_EXPLORER",
+      "configured": true,
+      "bounds": {
+        "top": 1368,
+        "left": 798,
+        "width": 456,
+        "height": 304
+      },
+      "tileFilter": {},
+      "isAutoRefreshDisabled": false,
+      "customName": "99th% Response time",
+      "queries": [
+        {
+          "id": "A",
+          "metric": "builtin:service.response.time",
+          "spaceAggregation": "PERCENTILE_90",
+          "splitBy": [
+            "dt.entity.service"
+          ],
+          "filterBy": {
+            "filterOperator": "AND",
+            "nestedFilters": [],
+            "criteria": []
+          },
+          "rate": "NONE",
+          "enabled": true
+        }
+      ],
+      "visualConfig": {
+        "type": "GRAPH_CHART",
+        "global": {
+          "hideLegend": false
+        },
+        "rules": [
+          {
+            "matcher": "A:",
+            "properties": {
+              "seriesType": "LINE"
+            },
+            "seriesOverrides": []
+          }
+        ],
+        "axes": {
+          "xAxis": {
+            "visible": true
+          },
+          "yAxes": [
+            {
+              "visible": true,
+              "min": "AUTO",
+              "max": "AUTO",
+              "position": "LEFT",
+              "queryIds": [
+                "A"
+              ],
+              "defaultAxis": true
+            }
+          ]
+        },
+        "thresholds": []
+      },
+      "metricExpressions": [
+        "resolution=null&(builtin:service.response.time:splitBy(\"dt.entity.service\"):percentile(90.0):sort(value(percentile(90.0),descending)):limit(20)):limit(100):names"
+      ]
+    },
+    {
+      "name": "99th% Response time",
+      "tileType": "DATA_EXPLORER",
+      "configured": true,
+      "bounds": {
+        "top": 1368,
+        "left": 1254,
+        "width": 304,
+        "height": 304
+      },
+      "tileFilter": {},
+      "isAutoRefreshDisabled": false,
+      "customName": "99th% Response time",
+      "queries": [
+        {
+          "id": "A",
+          "metric": "builtin:service.response.time",
+          "spaceAggregation": "PERCENTILE_90",
+          "splitBy": [
+            "dt.entity.service"
+          ],
+          "filterBy": {
+            "filterOperator": "AND",
+            "nestedFilters": [],
+            "criteria": []
+          },
+          "rate": "NONE",
+          "enabled": true
+        }
+      ],
+      "visualConfig": {
+        "type": "TOP_LIST",
+        "global": {
+          "hideLegend": false
+        },
+        "rules": [
+          {
+            "matcher": "A:",
+            "properties": {
+              "seriesType": "LINE"
+            },
+            "seriesOverrides": []
+          }
+        ],
+        "axes": {
+          "xAxis": {
+            "visible": true
+          },
+          "yAxes": [
+            {
+              "visible": true,
+              "min": "AUTO",
+              "max": "AUTO",
+              "position": "LEFT",
+              "queryIds": [
+                "A"
+              ],
+              "defaultAxis": true
+            }
+          ]
+        },
+        "thresholds": []
+      },
+      "metricExpressions": [
+        "resolution=Inf&(builtin:service.response.time:splitBy(\"dt.entity.service\"):percentile(90.0):sort(value(percentile(90.0),descending)):limit(20)):limit(100):names"
+      ]
+    },
+    {
+      "name": "Failure rate (any  errors)",
+      "tileType": "DATA_EXPLORER",
+      "configured": true,
+      "bounds": {
+        "top": 760,
+        "left": 798,
+        "width": 456,
+        "height": 266
+      },
+      "tileFilter": {},
+      "isAutoRefreshDisabled": false,
+      "customName": "Failure rate (any  errors)",
+      "queries": [
+        {
+          "id": "A",
+          "metric": "builtin:service.errors.total.rate",
+          "spaceAggregation": "AVG",
+          "splitBy": [
+            "dt.entity.service"
+          ],
+          "filterBy": {
+            "filterOperator": "AND",
+            "nestedFilters": [],
+            "criteria": []
+          },
+          "rate": "NONE",
+          "enabled": true
+        }
+      ],
+      "visualConfig": {
+        "type": "GRAPH_CHART",
+        "global": {
+          "hideLegend": false
+        },
+        "rules": [
+          {
+            "matcher": "A:",
+            "properties": {
+              "seriesType": "LINE"
+            },
+            "seriesOverrides": []
+          }
+        ],
+        "axes": {
+          "xAxis": {
+            "visible": true
+          },
+          "yAxes": [
+            {
+              "visible": true,
+              "min": "AUTO",
+              "max": "AUTO",
+              "position": "LEFT",
+              "queryIds": [
+                "A"
+              ],
+              "defaultAxis": true
+            }
+          ]
+        },
+        "thresholds": []
+      },
+      "metricExpressions": [
+        "resolution=null&(builtin:service.errors.total.rate:splitBy(\"dt.entity.service\"):avg:sort(value(avg,descending)):limit(20)):limit(100):names"
+      ]
+    },
+    {
+      "name": "Failure rate (any  errors)",
+      "tileType": "DATA_EXPLORER",
+      "configured": true,
+      "bounds": {
+        "top": 760,
+        "left": 1254,
+        "width": 304,
+        "height": 266
+      },
+      "tileFilter": {},
+      "isAutoRefreshDisabled": false,
+      "customName": "Failure rate (any  errors)",
+      "queries": [
+        {
+          "id": "A",
+          "metric": "builtin:service.errors.total.rate",
+          "spaceAggregation": "AVG",
+          "splitBy": [
+            "dt.entity.service"
+          ],
+          "filterBy": {
+            "filterOperator": "AND",
+            "nestedFilters": [],
+            "criteria": []
+          },
+          "rate": "NONE",
+          "enabled": true
+        }
+      ],
+      "visualConfig": {
+        "type": "TOP_LIST",
+        "global": {
+          "hideLegend": false
+        },
+        "rules": [
+          {
+            "matcher": "A:",
+            "properties": {
+              "seriesType": "LINE"
+            },
+            "seriesOverrides": []
+          }
+        ],
+        "axes": {
+          "xAxis": {
+            "visible": true
+          },
+          "yAxes": [
+            {
+              "visible": true,
+              "min": "AUTO",
+              "max": "AUTO",
+              "position": "LEFT",
+              "queryIds": [
+                "A"
+              ],
+              "defaultAxis": true
+            }
+          ]
+        },
+        "thresholds": []
+      },
+      "metricExpressions": [
+        "resolution=Inf&(builtin:service.errors.total.rate:splitBy(\"dt.entity.service\"):avg:sort(value(avg,descending)):limit(20)):limit(100):names"
+      ]
+    },
+    {
+      "name": "CPU usage %",
+      "tileType": "DATA_EXPLORER",
+      "configured": true,
+      "bounds": {
+        "top": 456,
+        "left": 1596,
+        "width": 456,
+        "height": 304
+      },
+      "tileFilter": {},
+      "isAutoRefreshDisabled": false,
+      "customName": "CPU usage %",
+      "queries": [
+        {
+          "id": "A",
+          "metric": "builtin:host.cpu.usage",
+          "spaceAggregation": "AVG",
+          "splitBy": [
+            "dt.entity.host"
+          ],
+          "filterBy": {
+            "filterOperator": "AND",
+            "nestedFilters": [],
+            "criteria": []
+          },
+          "rate": "NONE",
+          "enabled": true
+        }
+      ],
+      "visualConfig": {
+        "type": "GRAPH_CHART",
+        "global": {
+          "hideLegend": false
+        },
+        "rules": [
+          {
+            "matcher": "A:",
+            "properties": {
+              "seriesType": "LINE"
+            },
+            "seriesOverrides": []
+          }
+        ],
+        "axes": {
+          "xAxis": {
+            "visible": true
+          },
+          "yAxes": [
+            {
+              "visible": true,
+              "min": "AUTO",
+              "max": "AUTO",
+              "position": "LEFT",
+              "queryIds": [
+                "A"
+              ],
+              "defaultAxis": true
+            }
+          ]
+        },
+        "thresholds": []
+      },
+      "metricExpressions": [
+        "resolution=null&(builtin:host.cpu.usage:splitBy(\"dt.entity.host\"):avg:sort(value(avg,descending)):limit(20)):limit(100):names"
+      ]
+    },
+    {
+      "name": "CPU usage %",
+      "tileType": "DATA_EXPLORER",
+      "configured": true,
+      "bounds": {
+        "top": 456,
+        "left": 2052,
+        "width": 266,
+        "height": 304
+      },
+      "tileFilter": {},
+      "isAutoRefreshDisabled": false,
+      "customName": "CPU usage %",
+      "queries": [
+        {
+          "id": "A",
+          "metric": "builtin:host.cpu.usage",
+          "spaceAggregation": "AVG",
+          "splitBy": [
+            "dt.entity.host"
+          ],
+          "filterBy": {
+            "filterOperator": "AND",
+            "nestedFilters": [],
+            "criteria": []
+          },
+          "rate": "NONE",
+          "enabled": true
+        }
+      ],
+      "visualConfig": {
+        "type": "TOP_LIST",
+        "global": {
+          "hideLegend": false
+        },
+        "rules": [
+          {
+            "matcher": "A:",
+            "properties": {
+              "seriesType": "LINE"
+            },
+            "seriesOverrides": []
+          }
+        ],
+        "axes": {
+          "xAxis": {
+            "visible": true
+          },
+          "yAxes": [
+            {
+              "visible": true,
+              "min": "AUTO",
+              "max": "AUTO",
+              "position": "LEFT",
+              "queryIds": [
+                "A"
+              ],
+              "defaultAxis": true
+            }
+          ]
+        },
+        "thresholds": []
+      },
+      "metricExpressions": [
+        "resolution=Inf&(builtin:host.cpu.usage:splitBy(\"dt.entity.host\"):avg:sort(value(avg,descending)):limit(20)):limit(100):names"
+      ]
+    },
+    {
+      "name": "",
+      "tileType": "HOSTS",
+      "configured": true,
+      "bounds": {
+        "top": 304,
+        "left": 1938,
+        "width": 190,
+        "height": 152
+      },
+      "tileFilter": {},
+      "isAutoRefreshDisabled": false,
+      "filterConfig": {
+        "type": "HOST",
+        "customName": "Linux Hosts",
+        "defaultName": "Hosts",
+        "chartConfig": {
+          "legendShown": true,
+          "type": "TIMESERIES",
+          "series": [],
+          "resultMetadata": {}
+        },
+        "filtersPerEntityType": {
+          "HOST": {
+            "HOST_OPERATING_SYSTEM": [
+              "2"
+            ]
+          }
+        }
+      },
+      "chartVisible": true
+    },
+    {
+      "name": "",
+      "tileType": "HOSTS",
+      "configured": true,
+      "bounds": {
+        "top": 304,
+        "left": 2128,
+        "width": 190,
+        "height": 152
+      },
+      "tileFilter": {},
+      "isAutoRefreshDisabled": false,
+      "filterConfig": {
+        "type": "HOST",
+        "customName": "Windows Hosts",
+        "defaultName": "Hosts",
+        "chartConfig": {
+          "legendShown": true,
+          "type": "TIMESERIES",
+          "series": [],
+          "resultMetadata": {}
+        },
+        "filtersPerEntityType": {
+          "HOST": {
+            "HOST_OPERATING_SYSTEM": [
+              "1"
+            ]
+          }
+        }
+      },
+      "chartVisible": true
+    },
+    {
+      "name": "Memory used %",
+      "tileType": "DATA_EXPLORER",
+      "configured": true,
+      "bounds": {
+        "top": 760,
+        "left": 1596,
+        "width": 456,
+        "height": 266
+      },
+      "tileFilter": {},
+      "isAutoRefreshDisabled": false,
+      "customName": "Memory used %",
+      "queries": [
+        {
+          "id": "A",
+          "metric": "builtin:host.mem.usage",
+          "spaceAggregation": "AVG",
+          "splitBy": [
+            "dt.entity.host"
+          ],
+          "filterBy": {
+            "filterOperator": "AND",
+            "nestedFilters": [],
+            "criteria": []
+          },
+          "rate": "NONE",
+          "enabled": true
+        }
+      ],
+      "visualConfig": {
+        "type": "GRAPH_CHART",
+        "global": {
+          "hideLegend": false
+        },
+        "rules": [
+          {
+            "matcher": "A:",
+            "properties": {
+              "seriesType": "LINE"
+            },
+            "seriesOverrides": []
+          }
+        ],
+        "axes": {
+          "xAxis": {
+            "visible": true
+          },
+          "yAxes": [
+            {
+              "visible": true,
+              "min": "AUTO",
+              "max": "AUTO",
+              "position": "LEFT",
+              "queryIds": [
+                "A"
+              ],
+              "defaultAxis": true
+            }
+          ]
+        },
+        "thresholds": []
+      },
+      "metricExpressions": [
+        "resolution=null&(builtin:host.mem.usage:splitBy(\"dt.entity.host\"):avg:sort(value(avg,descending)):limit(20)):limit(100):names"
+      ]
+    },
+    {
+      "name": "Memory used %",
+      "tileType": "DATA_EXPLORER",
+      "configured": true,
+      "bounds": {
+        "top": 760,
+        "left": 2052,
+        "width": 266,
+        "height": 266
+      },
+      "tileFilter": {},
+      "isAutoRefreshDisabled": false,
+      "customName": "Memory used %",
+      "queries": [
+        {
+          "id": "A",
+          "metric": "builtin:host.mem.usage",
+          "spaceAggregation": "AVG",
+          "splitBy": [
+            "dt.entity.host"
+          ],
+          "filterBy": {
+            "filterOperator": "AND",
+            "nestedFilters": [],
+            "criteria": []
+          },
+          "rate": "NONE",
+          "enabled": true
+        }
+      ],
+      "visualConfig": {
+        "type": "TOP_LIST",
+        "global": {
+          "hideLegend": false
+        },
+        "rules": [
+          {
+            "matcher": "A:",
+            "properties": {
+              "seriesType": "LINE"
+            },
+            "seriesOverrides": []
+          }
+        ],
+        "axes": {
+          "xAxis": {
+            "visible": true
+          },
+          "yAxes": [
+            {
+              "visible": true,
+              "min": "AUTO",
+              "max": "AUTO",
+              "position": "LEFT",
+              "queryIds": [
+                "A"
+              ],
+              "defaultAxis": true
+            }
+          ]
+        },
+        "thresholds": []
+      },
+      "metricExpressions": [
+        "resolution=Inf&(builtin:host.mem.usage:splitBy(\"dt.entity.host\"):avg:sort(value(avg,descending)):limit(20)):limit(100):names"
+      ]
+    },
+    {
+      "name": "Disk available %",
+      "tileType": "DATA_EXPLORER",
+      "configured": true,
+      "bounds": {
+        "top": 1064,
+        "left": 1596,
+        "width": 456,
+        "height": 304
+      },
+      "tileFilter": {},
+      "isAutoRefreshDisabled": false,
+      "customName": "Disk available %",
+      "queries": [
+        {
+          "id": "A",
+          "metric": "builtin:host.disk.free",
+          "spaceAggregation": "AVG",
+          "splitBy": [
+            "dt.entity.host"
+          ],
+          "filterBy": {
+            "filterOperator": "AND",
+            "nestedFilters": [],
+            "criteria": []
+          },
+          "rate": "NONE",
+          "enabled": true
+        }
+      ],
+      "visualConfig": {
+        "type": "GRAPH_CHART",
+        "global": {
+          "hideLegend": false
+        },
+        "rules": [
+          {
+            "matcher": "A:",
+            "properties": {
+              "seriesType": "LINE"
+            },
+            "seriesOverrides": []
+          }
+        ],
+        "axes": {
+          "xAxis": {
+            "visible": true
+          },
+          "yAxes": [
+            {
+              "visible": true,
+              "min": "AUTO",
+              "max": "AUTO",
+              "position": "LEFT",
+              "queryIds": [
+                "A"
+              ],
+              "defaultAxis": true
+            }
+          ]
+        },
+        "thresholds": []
+      },
+      "metricExpressions": [
+        "resolution=null&(builtin:host.disk.free:splitBy(\"dt.entity.host\"):avg:sort(value(avg,descending)):limit(20)):limit(100):names"
+      ]
+    },
+    {
+      "name": "Disk available %",
+      "tileType": "DATA_EXPLORER",
+      "configured": true,
+      "bounds": {
+        "top": 1064,
+        "left": 2052,
+        "width": 266,
+        "height": 304
+      },
+      "tileFilter": {},
+      "isAutoRefreshDisabled": false,
+      "customName": "Disk available %",
+      "queries": [
+        {
+          "id": "A",
+          "metric": "builtin:host.disk.free",
+          "spaceAggregation": "AVG",
+          "splitBy": [
+            "dt.entity.host"
+          ],
+          "filterBy": {
+            "filterOperator": "AND",
+            "nestedFilters": [],
+            "criteria": []
+          },
+          "rate": "NONE",
+          "enabled": true
+        }
+      ],
+      "visualConfig": {
+        "type": "TOP_LIST",
+        "global": {
+          "hideLegend": false
+        },
+        "rules": [
+          {
+            "matcher": "A:",
+            "properties": {
+              "seriesType": "LINE"
+            },
+            "seriesOverrides": []
+          }
+        ],
+        "axes": {
+          "xAxis": {
+            "visible": true
+          },
+          "yAxes": [
+            {
+              "visible": true,
+              "min": "AUTO",
+              "max": "AUTO",
+              "position": "LEFT",
+              "queryIds": [
+                "A"
+              ],
+              "defaultAxis": true
+            }
+          ]
+        },
+        "thresholds": []
+      },
+      "metricExpressions": [
+        "resolution=Inf&(builtin:host.disk.free:splitBy(\"dt.entity.host\"):avg:sort(value(avg,descending)):limit(20)):limit(100):names"
+      ]
+    },
+    {
+      "name": "Garbage collection total collection time",
+      "tileType": "DATA_EXPLORER",
+      "configured": true,
+      "bounds": {
+        "top": 1368,
+        "left": 1596,
+        "width": 456,
+        "height": 304
+      },
+      "tileFilter": {},
+      "isAutoRefreshDisabled": false,
+      "customName": "Garbage collection total collection time",
+      "queries": [
+        {
+          "id": "A",
+          "metric": "builtin:tech.jvm.memory.gc.collectionTime",
+          "spaceAggregation": "VALUE",
+          "splitBy": [
+            "dt.entity.process_group_instance"
+          ],
+          "filterBy": {
+            "filterOperator": "AND",
+            "nestedFilters": [],
+            "criteria": []
+          },
+          "rate": "NONE",
+          "enabled": true
+        }
+      ],
+      "visualConfig": {
+        "type": "GRAPH_CHART",
+        "global": {
+          "hideLegend": false
+        },
+        "rules": [
+          {
+            "matcher": "A:",
+            "properties": {
+              "seriesType": "LINE"
+            },
+            "seriesOverrides": []
+          }
+        ],
+        "axes": {
+          "xAxis": {
+            "visible": true
+          },
+          "yAxes": [
+            {
+              "visible": true,
+              "min": "AUTO",
+              "max": "AUTO",
+              "position": "LEFT",
+              "queryIds": [
+                "A"
+              ],
+              "defaultAxis": true
+            }
+          ]
+        },
+        "thresholds": []
+      },
+      "metricExpressions": [
+        "resolution=null&(builtin:tech.jvm.memory.gc.collectionTime:splitBy(\"dt.entity.process_group_instance\"):value:sort(value(sum,descending)):limit(20)):limit(100):names"
+      ]
+    },
+    {
+      "name": "Garbage collection total collection time",
+      "tileType": "DATA_EXPLORER",
+      "configured": true,
+      "bounds": {
+        "top": 1368,
+        "left": 2052,
+        "width": 266,
+        "height": 304
+      },
+      "tileFilter": {},
+      "isAutoRefreshDisabled": false,
+      "customName": "Garbage collection total collection time",
+      "queries": [
+        {
+          "id": "A",
+          "metric": "builtin:tech.jvm.memory.gc.collectionTime",
+          "spaceAggregation": "VALUE",
+          "splitBy": [
+            "dt.entity.process_group_instance"
+          ],
+          "filterBy": {
+            "filterOperator": "AND",
+            "nestedFilters": [],
+            "criteria": []
+          },
+          "rate": "NONE",
+          "enabled": true
+        }
+      ],
+      "visualConfig": {
+        "type": "TOP_LIST",
+        "global": {
+          "hideLegend": false
+        },
+        "rules": [
+          {
+            "matcher": "A:",
+            "properties": {
+              "seriesType": "LINE"
+            },
+            "seriesOverrides": []
+          }
+        ],
+        "axes": {
+          "xAxis": {
+            "visible": true
+          },
+          "yAxes": [
+            {
+              "visible": true,
+              "min": "AUTO",
+              "max": "AUTO",
+              "position": "LEFT",
+              "queryIds": [
+                "A"
+              ],
+              "defaultAxis": true
+            }
+          ]
+        },
+        "thresholds": []
+      },
+      "metricExpressions": [
+        "resolution=Inf&(builtin:tech.jvm.memory.gc.collectionTime:splitBy(\"dt.entity.process_group_instance\"):value:sort(value(sum,descending)):limit(20)):limit(100):names"
+      ]
+    },
+    {
+      "name": "Database health",
+      "tileType": "DATABASES_OVERVIEW",
+      "configured": true,
+      "bounds": {
+        "top": 304,
+        "left": 2394,
+        "width": 304,
+        "height": 152
+      },
+      "tileFilter": {},
+      "isAutoRefreshDisabled": false,
+      "chartVisible": true
+    },
+    {
+      "name": "Failed connections",
+      "tileType": "DATA_EXPLORER",
+      "configured": true,
+      "bounds": {
+        "top": 684,
+        "left": 2394,
+        "width": 304,
+        "height": 266
+      },
+      "tileFilter": {},
+      "isAutoRefreshDisabled": false,
+      "customName": "Failed connections",
+      "queries": [
+        {
+          "id": "A",
+          "metric": "builtin:service.dbconnections.failure",
+          "spaceAggregation": "VALUE",
+          "splitBy": [
+            "dt.entity.service"
+          ],
+          "filterBy": {
+            "filterOperator": "AND",
+            "nestedFilters": [],
+            "criteria": []
+          },
+          "rate": "NONE",
+          "enabled": true
+        }
+      ],
+      "visualConfig": {
+        "type": "TOP_LIST",
+        "global": {
+          "hideLegend": false
+        },
+        "rules": [
+          {
+            "matcher": "A:",
+            "properties": {
+              "seriesType": "LINE"
+            },
+            "seriesOverrides": []
+          }
+        ],
+        "axes": {
+          "xAxis": {
+            "visible": true
+          },
+          "yAxes": [
+            {
+              "visible": true,
+              "min": "AUTO",
+              "max": "AUTO",
+              "position": "LEFT",
+              "queryIds": [
+                "A"
+              ],
+              "defaultAxis": true
+            }
+          ]
+        },
+        "thresholds": []
+      },
+      "metricExpressions": [
+        "resolution=Inf&(builtin:service.dbconnections.failure:splitBy(\"dt.entity.service\"):value:sort(value(sum,descending)):limit(20)):limit(100):names"
+      ]
+    },
+    {
+      "name": "Slowest Database - 99th% RT",
+      "tileType": "DATA_EXPLORER",
+      "configured": true,
+      "bounds": {
+        "top": 456,
+        "left": 2394,
+        "width": 304,
+        "height": 228
+      },
+      "tileFilter": {},
+      "isAutoRefreshDisabled": false,
+      "customName": "Slowest Database - 99th% RT",
+      "queries": [
+        {
+          "id": "A",
+          "metric": "builtin:service.requestCount.total",
+          "spaceAggregation": "VALUE",
+          "splitBy": [
+            "dt.entity.service"
+          ],
+          "filterBy": {
+            "filterOperator": "AND",
+            "nestedFilters": [
+              {
+                "filter": "dt.entity.service",
+                "filterType": "ENTITY_ATTRIBUTE",
+                "filterOperator": "OR",
+                "entityAttribute": "servicetype",
+                "nestedFilters": [],
+                "criteria": [
+                  {
+                    "value": "DATABASE_SERVICE",
+                    "evaluator": "IN"
+                  }
+                ]
+              }
+            ],
+            "criteria": []
+          },
+          "rate": "NONE",
+          "enabled": true
+        }
+      ],
+      "visualConfig": {
+        "type": "TOP_LIST",
+        "global": {
+          "hideLegend": false
+        },
+        "rules": [
+          {
+            "matcher": "A:",
+            "properties": {
+              "seriesType": "LINE"
+            },
+            "seriesOverrides": []
+          }
+        ],
+        "axes": {
+          "xAxis": {
+            "visible": true
+          },
+          "yAxes": [
+            {
+              "visible": true,
+              "min": "AUTO",
+              "max": "AUTO",
+              "position": "LEFT",
+              "queryIds": [
+                "A"
+              ],
+              "defaultAxis": true
+            }
+          ]
+        },
+        "thresholds": []
+      },
+      "metricExpressions": [
+        "resolution=Inf&(builtin:service.requestCount.total:filter(and(or(in(\"dt.entity.service\",entitySelector(\"type(service),servicetype(~\"DATABASE_SERVICE~\")\"))))):splitBy(\"dt.entity.service\"):value:sort(value(sum,descending)):limit(20)):limit(100):names"
+      ]
+    },
+    {
+      "name": "Connection failure rate",
+      "tileType": "DATA_EXPLORER",
+      "configured": true,
+      "bounds": {
+        "top": 950,
+        "left": 2394,
+        "width": 304,
+        "height": 266
+      },
+      "tileFilter": {},
+      "isAutoRefreshDisabled": false,
+      "customName": "Connection failure rate",
+      "queries": [
+        {
+          "id": "A",
+          "metric": "builtin:service.dbconnections.failureRate",
+          "spaceAggregation": "VALUE",
+          "splitBy": [
+            "dt.entity.service"
+          ],
+          "filterBy": {
+            "filterOperator": "AND",
+            "nestedFilters": [],
+            "criteria": []
+          },
+          "rate": "NONE",
+          "enabled": true
+        }
+      ],
+      "visualConfig": {
+        "type": "TOP_LIST",
+        "global": {
+          "hideLegend": false
+        },
+        "rules": [
+          {
+            "matcher": "A:",
+            "properties": {
+              "seriesType": "LINE"
+            },
+            "seriesOverrides": []
+          }
+        ],
+        "axes": {
+          "xAxis": {
+            "visible": true
+          },
+          "yAxes": [
+            {
+              "visible": true,
+              "min": "AUTO",
+              "max": "AUTO",
+              "position": "LEFT",
+              "queryIds": [
+                "A"
+              ],
+              "defaultAxis": true
+            }
+          ]
+        },
+        "thresholds": []
+      },
+      "metricExpressions": [
+        "resolution=Inf&(builtin:service.dbconnections.failureRate:splitBy(\"dt.entity.service\"):value:sort(value(sum,descending)):limit(20)):limit(100):names"
+      ]
+    },
+    {
+      "name": "Network",
+      "tileType": "HEADER",
+      "configured": true,
+      "bounds": {
+        "top": 1216,
+        "left": 2394,
+        "width": 304,
+        "height": 38
+      },
+      "tileFilter": {},
+      "isAutoRefreshDisabled": false
+    },
+    {
+      "name": "Network status",
+      "tileType": "NETWORK_MEDIUM",
+      "configured": true,
+      "bounds": {
+        "top": 1254,
+        "left": 2394,
+        "width": 304,
+        "height": 152
+      },
+      "tileFilter": {},
+      "isAutoRefreshDisabled": false
+    },
+    {
+      "name": "Network metrics",
+      "tileType": "NETWORK",
+      "configured": true,
+      "bounds": {
+        "top": 1406,
+        "left": 2394,
+        "width": 304,
+        "height": 304
+      },
+      "tileFilter": {},
+      "isAutoRefreshDisabled": false
+    },
+    {
+      "name": "Key user action",
+      "tileType": "DEM_KEY_USER_ACTION",
+      "configured": true,
+      "bounds": {
+        "top": 1710,
+        "left": 190,
+        "width": 304,
+        "height": 304
+      },
+      "tileFilter": {},
+      "isAutoRefreshDisabled": false,
+      "assignedEntities": [
+        "APPLICATION-CB0200BF7867BEA0",
+        "APPLICATION_METHOD-62F5E249871359AD"
+      ]
+    },
+    {
+      "name": "Image",
+      "tileType": "IMAGE",
+      "configured": true,
+      "bounds": {
+        "top": 152,
+        "left": 190,
+        "width": 608,
+        "height": 152
+      },
+      "tileFilter": {},
+      "isAutoRefreshDisabled": false,
+      "image": "data:image/webp;base64,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"
+    },
+    {
+      "name": "Image",
+      "tileType": "IMAGE",
+      "configured": true,
+      "bounds": {
+        "top": 152,
+        "left": 798,
+        "width": 760,
+        "height": 152
+      },
+      "tileFilter": {},
+      "isAutoRefreshDisabled": false,
+      "image": "data:image/svg+xml;base64,PHN2ZyBvdmVyZmxvdz0iaGlkZGVuIiB4bWw6c3BhY2U9InByZXNlcnZlIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiBoZWlnaHQ9IjE1MiIgd2lkdGg9IjQ4OCI+PGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTM5NiAtMjg0KSI+PGc+PGc+PGc+PGc+PHBhdGggZmlsbC1vcGFjaXR5PSIxIiBmaWxsLXJ1bGU9Im5vbnplcm8iIGZpbGw9IiNGRkZGRkYiIGQ9Ik01NzkuOTYgMzQ0LjExIDU4Mi44NCAzNDQuMTEgNTgyLjg0IDMyMC4wOCA1NzkuOTYgMzIwLjA4IDU3OS45NiAzMTYuMzUgNTg5LjcyIDMxNi4zNSA1ODkuNzIgMzIwLjA4IDU4Ni44NCAzMjAuMDggNTg2Ljg0IDM0NC4xMSA1ODkuNzIgMzQ0LjExIDU4OS43MiAzNDcuODQgNTc5Ljk2IDM0Ny44NCA1NzkuOTYgMzQ0LjExWiI+PC9wYXRoPjxwYXRoIGZpbGwtb3BhY2l0eT0iMSIgZmlsbC1ydWxlPSJub256ZXJvIiBmaWxsPSIjRkZGRkZGIiBkPSJNNjA1LjA2IDMyNy42QzYwMS41MSAzMjcuNiA1OTkuNDQgMzI5LjggNTk5LjQ0IDMzMy44NUw1OTkuNDQgMzQ3Ljg0IDU5NS41MiAzNDcuODQgNTk1LjUyIDMyNC42NyA1OTguNzYgMzI0LjY3IDU5OC44NSAzMjkuMzVDNTk5LjkzIDMyNS45NyA2MDIuNjMgMzI0IDYwNi40MSAzMjQgNjExLjIzIDMyNCA2MTQuMDEgMzI3LjE5IDYxNC4wMSAzMzMuMDlMNjE0LjAxIDM0Ny44NSA2MTAuMDUgMzQ3Ljg1IDYxMC4wNSAzMzMuNzJDNjEwLjA1IDMyOS42MyA2MDguNDcgMzI3LjYgNjA1LjA1IDMyNy42WiI+PC9wYXRoPjxwYXRoIGZpbGwtb3BhY2l0eT0iMSIgZmlsbC1ydWxlPSJub256ZXJvIiBmaWxsPSIjRkZGRkZGIiBkPSJNNjI4LjUyIDMxNC41NSA2MzIuMzkgMzE0LjYgNjMyLjM5IDMxOC4xNSA2MjguMzkgMzE4LjE1QzYyNi43NyAzMTguMTUgNjI1LjkyIDMxOS4zNiA2MjUuOTIgMzIxLjdMNjI1LjkyIDMyNC42NyA2MzIuMDQgMzI0LjY3IDYzMi4wNCAzMjguMTMgNjI1LjkyIDMyOC4xMyA2MjUuOTIgMzQ3Ljg0IDYyMiAzNDcuODQgNjIyIDMyOC4xMyA2MTguMTggMzI4LjEzIDYxOC4xOCAzMjQuNjcgNjIyIDMyNC42NyA2MjIgMzIxLjc5QzYyMiAzMTcuMTEgNjI0LjM0IDMxNC41IDYyOC41MyAzMTQuNTRaIj48L3BhdGg+PHBhdGggZmlsbC1vcGFjaXR5PSIxIiBmaWxsLXJ1bGU9Im5vbnplcm8iIGZpbGw9IiNGRkZGRkYiIGQ9Ik02NDAuMzkgMzQ3Ljg1IDYzNi40MyAzNDcuODUgNjM2LjQzIDMyNC42OCA2MzkuODUgMzI0LjY4IDYzOS45NCAzMzAuODlDNjQwLjcxIDMyNi44IDY0Mi41NSAzMjQuMSA2NDYuNTYgMzI0LjEgNjQ3LjczIDMyNC4xIDY0OC42OCAzMjQuMzIgNjQ5LjM1IDMyNC41NUw2NDguNTQgMzI4LjUxQzY0Ny44MiAzMjguMjggNjQ3LjEgMzI4LjE1IDY0Ni4zNCAzMjguMTUgNjQyLjQyIDMyOC4xNSA2NDAuNCAzMzEuMyA2NDAuNCAzMzYuODNMNjQwLjQgMzQ3Ljg1WiI+PC9wYXRoPjxwYXRoIGZpbGwtb3BhY2l0eT0iMSIgZmlsbC1ydWxlPSJub256ZXJvIiBmaWxsPSIjRkZGRkZGIiBkPSJNNjUyLjM1IDM0MS4xOUM2NTIuMzUgMzM2LjIgNjU2LjYyIDMzMy44MSA2NjIuMiAzMzMuODFMNjY3LjI4IDMzMy44MSA2NjcuMjQgMzMxLjdDNjY3LjIgMzI4LjY4IDY2NS4yNiAzMjcuNjEgNjYyLjA3IDMyNy42MSA2NTkuNTUgMzI3LjYxIDY1Ni45OSAzMjguMjggNjU1LjE0IDMyOS4xNEw2NTMuNzQgMzI1LjlDNjU2LjQgMzI0LjY0IDY1OS41IDMyNC4wMSA2NjIuMjQgMzI0LjAxIDY2Ny4xOSAzMjQuMDEgNjcxLjIgMzI2LjAzIDY3MS4yIDMzMS44NEw2NzEuMiAzNDcuODYgNjY3Ljk2IDM0Ny44NiA2NjcuNzggMzQ0LjA4QzY2Ni41NyAzNDYuOTYgNjYzLjkxIDM0OC41MyA2NjAuNCAzNDguNTMgNjU1LjY4IDM0OC41MyA2NTIuMzUgMzQ1Ljc5IDY1Mi4zNSAzNDEuNTZMNjUyLjM1IDM0MS4yWk02NjAuOTQgMzQ1LjM3QzY2NS4yNiAzNDUuMzcgNjY3LjM3IDM0My4zIDY2Ny4zMyAzMzkuMTJMNjY3LjI5IDMzNy4wNSA2NjIuMTIgMzM3LjA1QzY1OC4yIDMzNy4wNSA2NTYuMTggMzM4LjQ5IDY1Ni4xOCAzNDEuMTlMNjU2LjE4IDM0MS41NUM2NTYuMTggMzQ0LjA3IDY1Ny44NSAzNDUuMzcgNjYwLjk1IDM0NS4zN1oiPjwvcGF0aD48cGF0aCBmaWxsLW9wYWNpdHk9IjEiIGZpbGwtcnVsZT0ibm9uemVybyIgZmlsbD0iI0ZGRkZGRiIgZD0iTTY3NS45NSAzNDUuNiA2NzcuOTggMzQyLjYzQzY4MCAzNDQuMDcgNjgyLjUyIDM0NC45NyA2ODUuMTMgMzQ0Ljk3IDY4Ny40NyAzNDQuOTcgNjg5LjY3IDM0My44OSA2ODkuNjMgMzQxLjQyIDY4OS41OSAzMzkuNDQgNjg4LjEgMzM4LjQ1IDY4Ni4zIDMzOC4xOEw2ODMuMDIgMzM3LjY5QzY3OS4zNyAzMzcuMTUgNjc2LjY4IDMzNC45OSA2NzYuNzIgMzMwLjkgNjc2Ljc2IDMyNi42NyA2NzkuNjkgMzI0LjAyIDY4NC43NyAzMjQuMDIgNjg3LjU2IDMyNC4wMiA2OTAuNDggMzI0Ljc5IDY5Mi42OSAzMjUuOTFMNjkxLjMgMzI5LjI0QzY4OS44NiAzMjguNDggNjg3LjQ3IDMyNy42MiA2ODQuNzggMzI3LjYyIDY4Mi4zNSAzMjcuNjIgNjgwLjM3IDMyOC43IDY4MC4zNyAzMzAuOSA2ODAuMzcgMzMyLjg4IDY4MS45IDMzMy44NyA2ODMuODMgMzM0LjE4TDY4Ny4wMyAzMzQuNjhDNjkwLjcyIDMzNS4yNiA2OTMuMzcgMzM3LjQzIDY5My4zNyAzNDEuNjEgNjkzLjM3IDM0Ni4xMSA2OTAuMzEgMzQ4LjU4IDY4NC44MiAzNDguNTQgNjgxLjMxIDM0OC41IDY3OC4zOSAzNDcuNDIgNjc1Ljk1IDM0NS42MloiPjwvcGF0aD48cGF0aCBmaWxsLW9wYWNpdHk9IjEiIGZpbGwtcnVsZT0ibm9uemVybyIgZmlsbD0iI0ZGRkZGRiIgZD0iTTY5OS45NCAzNDEuMzIgNjk5Ljk0IDMyOC4xNCA2OTYuOTcgMzI4LjE0IDY5Ni45NyAzMjUuMTIgNjk4LjQ2IDMyNS4xMkM2OTkuNTggMzI1LjEyIDY5OS45NSAzMjQuNzYgNjk5Ljk1IDMyMy42NEw2OTkuOTUgMzE5LjE4IDcwMy45MSAzMTkuMTggNzAzLjkxIDMyNC42NyA3MDkuOTkgMzI0LjY3IDcwOS45OSAzMjguMTMgNzAzLjkxIDMyOC4xMyA3MDMuOTEgMzQxLjMxQzcwMy45MSAzNDMuNjUgNzA0LjcyIDM0NC4zNyA3MDcuODMgMzQ0LjM3TDcwOS45OSAzNDQuMzcgNzA5Ljk5IDM0OC4wMiA3MDcuMiAzNDguMDJDNzAyLjA3IDM0OC4wMiA2OTkuOTYgMzQ2LjQ5IDY5OS45NiAzNDEuMzFaIj48L3BhdGg+PHBhdGggZmlsbC1vcGFjaXR5PSIxIiBmaWxsLXJ1bGU9Im5vbnplcm8iIGZpbGw9IiNGRkZGRkYiIGQ9Ik03MTguODcgMzQ3Ljg1IDcxNC45MSAzNDcuODUgNzE0LjkxIDMyNC42OCA3MTguMzMgMzI0LjY4IDcxOC40MiAzMzAuODlDNzE5LjE5IDMyNi44IDcyMS4wMyAzMjQuMSA3MjUuMDQgMzI0LjEgNzI2LjIxIDMyNC4xIDcyNy4xNiAzMjQuMzIgNzI3LjgzIDMyNC41NUw3MjcuMDIgMzI4LjUxQzcyNi4zIDMyOC4yOCA3MjUuNTggMzI4LjE1IDcyNC44MiAzMjguMTUgNzIwLjkgMzI4LjE1IDcxOC44OCAzMzEuMyA3MTguODggMzM2LjgzTDcxOC44OCAzNDcuODVaIj48L3BhdGg+PHBhdGggZmlsbC1vcGFjaXR5PSIxIiBmaWxsLXJ1bGU9Im5vbnplcm8iIGZpbGw9IiNGRkZGRkYiIGQ9Ik03NDEuNDMgMzQ0LjkyQzc0NC42NyAzNDQuOTIgNzQ2Ljc0IDM0Mi43NiA3NDYuNzQgMzM4LjY3TDc0Ni43NCAzMjQuNjggNzUwLjY2IDMyNC42OCA3NTAuNjYgMzQ3Ljg1IDc0Ny40MiAzNDcuODUgNzQ3LjMzIDM0My4wNEM3NDYuMzkgMzQ2LjQyIDc0NC4xOCAzNDguNTMgNzQwLjI3IDM0OC41MyA3MzUuMzcgMzQ4LjUzIDczMi4xNyAzNDUuMiA3MzIuMTcgMzM5LjU4TDczMi4xNyAzMjQuNjkgNzM2LjEzIDMyNC42OSA3MzYuMTMgMzM5LjEzQzczNi4xMyAzNDIuNTkgNzM4LjA2IDM0NC45MyA3NDEuNDQgMzQ0LjkzWiI+PC9wYXRoPjxwYXRoIGZpbGwtb3BhY2l0eT0iMSIgZmlsbC1ydWxlPSJub256ZXJvIiBmaWxsPSIjRkZGRkZGIiBkPSJNNzU2LjAzIDMzNy45NSA3NTYuMDMgMzM1LjAyQzc1Ni4wMyAzMjcuODcgNzU5LjU5IDMyNCA3NjYuMiAzMjQgNzY4LjU4IDMyNCA3NzAuNzQgMzI0LjUgNzcyLjcyIDMyNS41OEw3NzEuMTUgMzI4LjU5Qzc2OS42MiAzMjcuODIgNzY4LjA0IDMyNy40NyA3NjYuMzggMzI3LjQ3IDc2Mi4wMiAzMjcuNDcgNzU5Ljk5IDMyOS45IDc1OS45OSAzMzUuMDNMNzU5Ljk5IDMzNy45NkM3NTkuOTkgMzQyLjY0IDc2Mi4zMyAzNDUuMiA3NjYuMjQgMzQ1LjIgNzY4LjE4IDM0NS4yIDc2OS45OCAzNDQuNTcgNzcxLjUgMzQzLjQ5TDc3My4zIDM0Ni4zMkM3NzEuMzcgMzQ3LjcyIDc2OC45OCAzNDguNTIgNzY2LjEgMzQ4LjUyIDc1OS44OSAzNDguNTIgNzU2LjAyIDM0NC43NCA3NTYuMDIgMzM3Ljk1WiI+PC9wYXRoPjxwYXRoIGZpbGwtb3BhY2l0eT0iMSIgZmlsbC1ydWxlPSJub256ZXJvIiBmaWxsPSIjRkZGRkZGIiBkPSJNNzc5LjY1IDM0MS4zMiA3NzkuNjUgMzI4LjE0IDc3Ni42OCAzMjguMTQgNzc2LjY4IDMyNS4xMiA3NzguMTcgMzI1LjEyQzc3OS4yOSAzMjUuMTIgNzc5LjY2IDMyNC43NiA3NzkuNjYgMzIzLjY0TDc3OS42NiAzMTkuMTggNzgzLjYyIDMxOS4xOCA3ODMuNjIgMzI0LjY3IDc4OS43IDMyNC42NyA3ODkuNyAzMjguMTMgNzgzLjYyIDMyOC4xMyA3ODMuNjIgMzQxLjMxQzc4My42MiAzNDMuNjUgNzg0LjQzIDM0NC4zNyA3ODcuNTQgMzQ0LjM3TDc4OS43IDM0NC4zNyA3ODkuNyAzNDguMDIgNzg2LjkxIDM0OC4wMkM3ODEuNzggMzQ4LjAyIDc3OS42NyAzNDYuNDkgNzc5LjY3IDM0MS4zMVoiPjwvcGF0aD48cGF0aCBmaWxsLW9wYWNpdHk9IjEiIGZpbGwtcnVsZT0ibm9uemVybyIgZmlsbD0iI0ZGRkZGRiIgZD0iTTgwMy44MiAzNDQuOTJDODA3LjA2IDM0NC45MiA4MDkuMTMgMzQyLjc2IDgwOS4xMyAzMzguNjdMODA5LjEzIDMyNC42OCA4MTMuMDUgMzI0LjY4IDgxMy4wNSAzNDcuODUgODA5LjgxIDM0Ny44NSA4MDkuNzIgMzQzLjA0QzgwOC43OCAzNDYuNDIgODA2LjU3IDM0OC41MyA4MDIuNjYgMzQ4LjUzIDc5Ny43NiAzNDguNTMgNzk0LjU2IDM0NS4yIDc5NC41NiAzMzkuNThMNzk0LjU2IDMyNC42OSA3OTguNTIgMzI0LjY5IDc5OC41MiAzMzkuMTNDNzk4LjUyIDM0Mi41OSA4MDAuNDUgMzQ0LjkzIDgwMy44MyAzNDQuOTNaIj48L3BhdGg+PHBhdGggZmlsbC1vcGFjaXR5PSIxIiBmaWxsLXJ1bGU9Im5vbnplcm8iIGZpbGw9IiNGRkZGRkYiIGQ9Ik04MjMuMjMgMzQ3Ljg1IDgxOS4yNyAzNDcuODUgODE5LjI3IDMyNC42OCA4MjIuNjkgMzI0LjY4IDgyMi43OCAzMzAuODlDODIzLjU1IDMyNi44IDgyNS4zOSAzMjQuMSA4MjkuNCAzMjQuMSA4MzAuNTcgMzI0LjEgODMxLjUyIDMyNC4zMiA4MzIuMTkgMzI0LjU1TDgzMS4zOCAzMjguNTFDODMwLjY2IDMyOC4yOCA4MjkuOTQgMzI4LjE1IDgyOS4xOCAzMjguMTUgODI1LjI2IDMyOC4xNSA4MjMuMjQgMzMxLjMgODIzLjI0IDMzNi44M0w4MjMuMjQgMzQ3Ljg1WiI+PC9wYXRoPjxwYXRoIGZpbGwtb3BhY2l0eT0iMSIgZmlsbC1ydWxlPSJub256ZXJvIiBmaWxsPSIjRkZGRkZGIiBkPSJNODQ1LjIxIDM0OC41MkM4MzkuMzIgMzQ4LjUyIDgzNS4yMiAzNDQuNzkgODM1LjIyIDMzOC44OUw4MzUuMjIgMzMzLjY3QzgzNS4yMiAzMjcuNzMgODM4LjY4IDMyNCA4NDQuNTggMzI0IDg1MC40OCAzMjQgODUzLjggMzI3LjczIDg1My44IDMzMy42N0w4NTMuOCAzMzguMjYgODM5LjE4IDMzOC4yNiA4MzkuMTggMzM4Ljg5QzgzOS4xOCAzNDIuNzYgODQxLjM5IDM0NS4xNCA4NDUuMTcgMzQ1LjE0IDg0Ny4yNCAzNDUuMTQgODQ5LjEzIDM0NC40MiA4NTAuNzkgMzQzLjI1TDg1Mi41NSAzNDYuMDhDODUwLjYxIDM0Ny42MSA4NDguMDkgMzQ4LjUxIDg0NS4yMiAzNDguNTFaTTg1MC4wNyAzMzQuODkgODUwLjA3IDMzMy42OEM4NTAuMDcgMzI5LjgxIDg0OC4wOSAzMjcuMzggODQ0LjU4IDMyNy4zOCA4NDEuMDcgMzI3LjM4IDgzOS4xOCAzMjkuODEgODM5LjE4IDMzMy42OEw4MzkuMTggMzM0Ljg5IDg1MC4wNyAzMzQuODlaIj48L3BhdGg+PHBhdGggZmlsbC1vcGFjaXR5PSIxIiBmaWxsLXJ1bGU9Im5vbnplcm8iIGZpbGw9IiNGRkZGRkYiIGQ9Ik01NzkuNiAzODUuMzIgNTc5LjYgMzc1LjMzQzU3OS42IDM2OC4zMSA1ODQuMSAzNjMuNjggNTkwLjk0IDM2My42OCA1OTcuNzggMzYzLjY4IDYwMi4xIDM2OC4xOCA2MDIuMSAzNzUuMDJMNjAyLjEgMzg1LjAxQzYwMi4xIDM5MS45NCA1OTcuNiAzOTYuNTMgNTkwLjc2IDM5Ni41MyA1ODMuOTIgMzk2LjUzIDU3OS42IDM5Mi4wOCA1NzkuNiAzODUuMzNaTTU5MC45NCAzOTIuNzlDNTk1LjM1IDM5Mi43OSA1OTggMzkwIDU5OCAzODUuMzJMNTk4IDM3NS4zM0M1OTggMzcwLjM4IDU5NS4zIDM2Ny40MSA1OTAuNzYgMzY3LjQxIDU4Ni4yMiAzNjcuNDEgNTgzLjcgMzcwLjI0IDU4My43IDM3NS4wMUw1ODMuNyAzODVDNTgzLjcgMzg5Ljg2IDU4Ni40IDM5Mi43OCA1OTAuOTQgMzkyLjc4WiI+PC9wYXRoPjxwYXRoIGZpbGwtb3BhY2l0eT0iMSIgZmlsbC1ydWxlPSJub256ZXJvIiBmaWxsPSIjRkZGRkZGIiBkPSJNNjExLjgxIDM5MS45MyA2MTEuNDUgMzk1Ljg1IDYwOC4yMSAzOTUuODUgNjA4LjIxIDM2MyA2MTIuMTMgMzYzIDYxMi4xMyAzNzYuMTRDNjEzLjM0IDM3My41OCA2MTUuNTkgMzcyIDYxOC44OCAzNzIgNjIzLjgzIDM3MiA2MjYuNzEgMzc1LjUxIDYyNi43MSAzODEuNDVMNjI2LjcxIDM4Ny4xMkM2MjYuNzEgMzkzLjAxIDYyMy41NiAzOTYuNTIgNjE4LjU2IDM5Ni41MiA2MTUuMTkgMzk2LjUyIDYxMi44OSAzOTQuOSA2MTEuODEgMzkxLjkzWk02MTcuMzUgMzkyLjkyQzYyMC42OCAzOTIuOTIgNjIyLjc1IDM5MC40OSA2MjIuNzUgMzg2LjU4TDYyMi43NSAzODEuOTVDNjIyLjc1IDM3OC4wMyA2MjAuNjggMzc1LjYxIDYxNy4zNSAzNzUuNjEgNjE0LjIgMzc1LjYxIDYxMi4xMyAzNzcuNzcgNjEyLjEzIDM4MS40MUw2MTIuMTMgMzg3LjEyQzYxMi4xNyAzOTAuNzYgNjE0LjIgMzkyLjkyIDYxNy4zNSAzOTIuOTJaIj48L3BhdGg+PHBhdGggZmlsbC1vcGFjaXR5PSIxIiBmaWxsLXJ1bGU9Im5vbnplcm8iIGZpbGw9IiNGRkZGRkYiIGQ9Ik02MzAuNTcgMzkzLjYgNjMyLjYgMzkwLjYzQzYzNC42MiAzOTIuMDcgNjM3LjE0IDM5Mi45NyA2MzkuNzUgMzkyLjk3IDY0Mi4wOSAzOTIuOTcgNjQ0LjI5IDM5MS44OSA2NDQuMjUgMzg5LjQyIDY0NC4yMSAzODcuNDQgNjQyLjcyIDM4Ni40NSA2NDAuOTIgMzg2LjE4TDYzNy42NCAzODUuNjlDNjMzLjk5IDM4NS4xNSA2MzEuMyAzODIuOTkgNjMxLjM0IDM3OC45IDYzMS4zOCAzNzQuNjcgNjM0LjMxIDM3Mi4wMiA2MzkuMzkgMzcyLjAyIDY0Mi4xOCAzNzIuMDIgNjQ1LjEgMzcyLjc5IDY0Ny4zMSAzNzMuOTFMNjQ1LjkyIDM3Ny4yNEM2NDQuNDggMzc2LjQ4IDY0Mi4wOSAzNzUuNjIgNjM5LjQgMzc1LjYyIDYzNi45NyAzNzUuNjIgNjM0Ljk5IDM3Ni43IDYzNC45OSAzNzguOSA2MzQuOTkgMzgwLjg4IDYzNi41MiAzODEuODcgNjM4LjQ1IDM4Mi4xOEw2NDEuNjUgMzgyLjY4QzY0NS4zNCAzODMuMjYgNjQ3Ljk5IDM4NS40MyA2NDcuOTkgMzg5LjYxIDY0Ny45OSAzOTQuMTEgNjQ0LjkzIDM5Ni41OCA2MzkuNDQgMzk2LjU0IDYzNS45MyAzOTYuNSA2MzMuMDEgMzk1LjQyIDYzMC41NyAzOTMuNjJaIj48L3BhdGg+PHBhdGggZmlsbC1vcGFjaXR5PSIxIiBmaWxsLXJ1bGU9Im5vbnplcm8iIGZpbGw9IiNGRkZGRkYiIGQ9Ik02NjIuNDYgMzk2LjUyQzY1Ni41NyAzOTYuNTIgNjUyLjQ3IDM5Mi43OSA2NTIuNDcgMzg2Ljg5TDY1Mi40NyAzODEuNjdDNjUyLjQ3IDM3NS43MyA2NTUuOTMgMzcyIDY2MS44MyAzNzIgNjY3LjczIDM3MiA2NzEuMDUgMzc1LjczIDY3MS4wNSAzODEuNjdMNjcxLjA1IDM4Ni4yNiA2NTYuNDMgMzg2LjI2IDY1Ni40MyAzODYuODlDNjU2LjQzIDM5MC43NiA2NTguNjQgMzkzLjE0IDY2Mi40MiAzOTMuMTQgNjY0LjQ5IDM5My4xNCA2NjYuMzggMzkyLjQyIDY2OC4wNCAzOTEuMjVMNjY5LjggMzk0LjA4QzY2Ny44NiAzOTUuNjEgNjY1LjM0IDM5Ni41MSA2NjIuNDcgMzk2LjUxWk02NjcuMzIgMzgyLjg5IDY2Ny4zMiAzODEuNjhDNjY3LjMyIDM3Ny44MSA2NjUuMzQgMzc1LjM4IDY2MS44MyAzNzUuMzggNjU4LjMyIDM3NS4zOCA2NTYuNDMgMzc3LjgxIDY1Ni40MyAzODEuNjhMNjU2LjQzIDM4Mi44OSA2NjcuMzIgMzgyLjg5WiI+PC9wYXRoPjxwYXRoIGZpbGwtb3BhY2l0eT0iMSIgZmlsbC1ydWxlPSJub256ZXJvIiBmaWxsPSIjRkZGRkZGIiBkPSJNNjgwLjIzIDM5NS44NSA2NzYuMjcgMzk1Ljg1IDY3Ni4yNyAzNzIuNjggNjc5LjY5IDM3Mi42OCA2NzkuNzggMzc4Ljg5QzY4MC41NSAzNzQuOCA2ODIuMzkgMzcyLjEgNjg2LjQgMzcyLjEgNjg3LjU3IDM3Mi4xIDY4OC41MiAzNzIuMzIgNjg5LjE5IDM3Mi41NUw2ODguMzggMzc2LjUxQzY4Ny42NiAzNzYuMjggNjg2Ljk0IDM3Ni4xNSA2ODYuMTggMzc2LjE1IDY4Mi4yNiAzNzYuMTUgNjgwLjI0IDM3OS4zIDY4MC4yNCAzODQuODNMNjgwLjI0IDM5NS44NVoiPjwvcGF0aD48cGF0aCBmaWxsLW9wYWNpdHk9IjEiIGZpbGwtcnVsZT0ibm9uemVybyIgZmlsbD0iI0ZGRkZGRiIgZD0iTTY5Mi4zMyAzNzIuNjggNjk2LjY1IDM3Mi42OCA3MDIuMjcgMzkyLjEyIDcwOC4xMiAzNzIuNjggNzEyLjMgMzcyLjY4IDcwNC44MyAzOTUuODUgNjk5LjUyIDM5NS44NSA2OTIuMzIgMzcyLjY4WiI+PC9wYXRoPjxwYXRoIGZpbGwtb3BhY2l0eT0iMSIgZmlsbC1ydWxlPSJub256ZXJvIiBmaWxsPSIjRkZGRkZGIiBkPSJNNzE1LjI1IDM4OS4xOUM3MTUuMjUgMzg0LjIgNzE5LjUyIDM4MS44MSA3MjUuMSAzODEuODFMNzMwLjE4IDM4MS44MSA3MzAuMTQgMzc5LjdDNzMwLjEgMzc2LjY4IDcyOC4xNiAzNzUuNjEgNzI0Ljk3IDM3NS42MSA3MjIuNDUgMzc1LjYxIDcxOS44OSAzNzYuMjggNzE4LjA0IDM3Ny4xNEw3MTYuNjQgMzczLjlDNzE5LjMgMzcyLjY0IDcyMi40IDM3Mi4wMSA3MjUuMTQgMzcyLjAxIDczMC4wOSAzNzIuMDEgNzM0LjEgMzc0LjAzIDczNC4xIDM3OS44NEw3MzQuMSAzOTUuODYgNzMwLjg2IDM5NS44NiA3MzAuNjggMzkyLjA4QzcyOS40NyAzOTQuOTYgNzI2LjgxIDM5Ni41MyA3MjMuMyAzOTYuNTMgNzE4LjU4IDM5Ni41MyA3MTUuMjUgMzkzLjc5IDcxNS4yNSAzODkuNTZMNzE1LjI1IDM4OS4yWk03MjMuODUgMzkzLjM3QzcyOC4xNyAzOTMuMzcgNzMwLjI4IDM5MS4zIDczMC4yNCAzODcuMTJMNzMwLjIgMzg1LjA1IDcyNS4wMyAzODUuMDVDNzIxLjExIDM4NS4wNSA3MTkuMDkgMzg2LjQ5IDcxOS4wOSAzODkuMTlMNzE5LjA5IDM4OS41NUM3MTkuMDkgMzkyLjA3IDcyMC43NiAzOTMuMzcgNzIzLjg2IDM5My4zN1oiPjwvcGF0aD48cGF0aCBmaWxsLW9wYWNpdHk9IjEiIGZpbGwtcnVsZT0ibm9uemVybyIgZmlsbD0iI0ZGRkZGRiIgZD0iTTc0My44NyAzOTEuOTMgNzQzLjUxIDM5NS44NSA3NDAuMjcgMzk1Ljg1IDc0MC4yNyAzNjMgNzQ0LjE5IDM2MyA3NDQuMTkgMzc2LjE0Qzc0NS40IDM3My41OCA3NDcuNjUgMzcyIDc1MC45NCAzNzIgNzU1Ljg5IDM3MiA3NTguNzcgMzc1LjUxIDc1OC43NyAzODEuNDVMNzU4Ljc3IDM4Ny4xMkM3NTguNzcgMzkzLjAxIDc1NS42MiAzOTYuNTIgNzUwLjYyIDM5Ni41MiA3NDcuMjUgMzk2LjUyIDc0NC45NSAzOTQuOSA3NDMuODcgMzkxLjkzWk03NDkuNCAzOTIuOTJDNzUyLjczIDM5Mi45MiA3NTQuOCAzOTAuNDkgNzU0LjggMzg2LjU4TDc1NC44IDM4MS45NUM3NTQuOCAzNzguMDMgNzUyLjczIDM3NS42MSA3NDkuNCAzNzUuNjEgNzQ2LjI1IDM3NS42MSA3NDQuMTggMzc3Ljc3IDc0NC4xOCAzODEuNDFMNzQ0LjE4IDM4Ny4xMkM3NDQuMjIgMzkwLjc2IDc0Ni4yNSAzOTIuOTIgNzQ5LjQgMzkyLjkyWiI+PC9wYXRoPjxwYXRoIGZpbGwtb3BhY2l0eT0iMSIgZmlsbC1ydWxlPSJub256ZXJvIiBmaWxsPSIjRkZGRkZGIiBkPSJNNzY2LjE4IDM2NC4xM0M3NjcuNjYgMzY0LjEzIDc2OC43NCAzNjUuMjEgNzY4Ljc0IDM2Ni42OSA3NjguNzQgMzY4LjE3IDc2Ny42NiAzNjkuMjUgNzY2LjE4IDM2OS4yNSA3NjQuNyAzNjkuMjUgNzYzLjYxIDM2OC4xNyA3NjMuNjEgMzY2LjY5IDc2My42MSAzNjUuMjEgNzY0LjY5IDM2NC4xMyA3NjYuMTggMzY0LjEzWk03NjQuMiAzNzIuNjggNzY4LjE2IDM3Mi42OCA3NjguMTYgMzk1Ljg1IDc2NC4yIDM5NS44NSA3NjQuMiAzNzIuNjhaIj48L3BhdGg+PHBhdGggZmlsbC1vcGFjaXR5PSIxIiBmaWxsLXJ1bGU9Im5vbnplcm8iIGZpbGw9IiNGRkZGRkYiIGQ9Ik03NzQuMzUgMzg5LjU1IDc3NC4zNSAzNjMgNzc4LjMxIDM2MyA3NzguMzEgMzg5LjkxQzc3OC4zMSAzOTEuNjYgNzc5LjI2IDM5Mi41NyA3ODAuOTcgMzkyLjU3TDc4MC45NyAzOTYuMTdDNzc2LjIgMzk2LjE3IDc3NC4zNSAzOTQuMzMgNzc0LjM1IDM4OS41NloiPjwvcGF0aD48cGF0aCBmaWxsLW9wYWNpdHk9IjEiIGZpbGwtcnVsZT0ibm9uemVybyIgZmlsbD0iI0ZGRkZGRiIgZD0iTTc4Ny45NiAzNjQuMTNDNzg5LjQ0IDM2NC4xMyA3OTAuNTIgMzY1LjIxIDc5MC41MiAzNjYuNjkgNzkwLjUyIDM2OC4xNyA3ODkuNDQgMzY5LjI1IDc4Ny45NiAzNjkuMjUgNzg2LjQ4IDM2OS4yNSA3ODUuMzkgMzY4LjE3IDc4NS4zOSAzNjYuNjkgNzg1LjM5IDM2NS4yMSA3ODYuNDcgMzY0LjEzIDc4Ny45NiAzNjQuMTNaTTc4NS45OCAzNzIuNjggNzg5Ljk0IDM3Mi42OCA3ODkuOTQgMzk1Ljg1IDc4NS45OCAzOTUuODUgNzg1Ljk4IDM3Mi42OFoiPjwvcGF0aD48cGF0aCBmaWxsLW9wYWNpdHk9IjEiIGZpbGwtcnVsZT0ibm9uemVybyIgZmlsbD0iI0ZGRkZGRiIgZD0iTTc5Ny40NCAzODkuMzIgNzk3LjQ0IDM3Ni4xNCA3OTQuNDcgMzc2LjE0IDc5NC40NyAzNzMuMTIgNzk1Ljk2IDM3My4xMkM3OTcuMDggMzczLjEyIDc5Ny40NSAzNzIuNzYgNzk3LjQ1IDM3MS42NEw3OTcuNDUgMzY3LjE4IDgwMS40MSAzNjcuMTggODAxLjQxIDM3Mi42NyA4MDcuNDkgMzcyLjY3IDgwNy40OSAzNzYuMTMgODAxLjQxIDM3Ni4xMyA4MDEuNDEgMzg5LjMxQzgwMS40MSAzOTEuNjUgODAyLjIyIDM5Mi4zNyA4MDUuMzMgMzkyLjM3TDgwNy40OSAzOTIuMzcgODA3LjQ5IDM5Ni4wMiA4MDQuNyAzOTYuMDJDNzk5LjU3IDM5Ni4wMiA3OTcuNDYgMzk0LjQ5IDc5Ny40NiAzODkuMzFaIj48L3BhdGg+PHBhdGggZmlsbC1vcGFjaXR5PSIxIiBmaWxsLXJ1bGU9Im5vbnplcm8iIGZpbGw9IiNGRkZGRkYiIGQ9Ik04MTcuMTQgMzk5LjYzQzgxOC4zNSAzOTguNTUgODE4LjY3IDM5Ni43NSA4MTcuOSAzOTQuMjhMODExLjE1IDM3Mi42OCA4MTUuNDcgMzcyLjY4IDgyMC40NyAzOTAuOSA4MjAuODMgMzkyLjg4IDgyMS4xOSAzOTAuOSA4MjYuNDEgMzcyLjY4IDgzMC42NCAzNzIuNjggODIyLjkgMzk2LjkzQzgyMS4xIDQwMi41NSA4MTcuOSA0MDQuNCA4MTMuNTQgNDA0LjcxTDgxMi44NyA0MDAuOThDODE1LjA4IDQwMC44IDgxNi4zOCA0MDAuMzUgODE3LjE0IDM5OS42M1oiPjwvcGF0aD48cGF0aCBmaWxsLW9wYWNpdHk9IjEiIGZpbGwtcnVsZT0ibm9uemVybyIgZmlsbD0iI0ZGRkZGRiIgZD0iTTUyNS40NSAzNDIuODJDNTIxIDM0Mi44MiA1MTYuODcgMzQ0LjIgNTEzLjQ3IDM0Ni41NSA1MTIuNzkgMzQ0LjUyIDUxMS44MiAzNDIuNjMgNTEwLjYxIDM0MC45MyA1MTAuNjEgMzQwLjkzIDUxMC41OSAzNDAuOTQgNTEwLjU5IDM0MC45NSA1MTAuMjUgMzQwLjQ1IDUwOS44OSAzMzkuOTYgNTA5LjUgMzM5LjQ5IDUwOS40MyAzMzkuNDEgNTA5LjM2IDMzOS4zMyA1MDkuMjkgMzM5LjI0IDUwNS40MyAzMzQuNjQgNDk5LjYzIDMzMS43MSA0OTMuMTYgMzMxLjcxIDQ5My4wOCAzMzEuNzEgNDkzIDMzMS43MSA0OTIuOTIgMzMxLjcxIDQ4OC41NiAzMzEuNzYgNDg0LjUxIDMzMy4xMyA0ODEuMTggMzM1LjQ0IDQ4MC44OCAzMzUuNjQgNDgwLjcyIDMzNS45OCA0ODAuNzIgMzM2LjM0TDQ4MC43MiAzODMuODhDNDgwLjcyIDM4NC40OSA0ODEuMjEgMzg0Ljk5IDQ4MS44MyAzODQuOTlMNTI1LjQ2IDM4NC45OUM1MzcuMTEgMzg0Ljk5IDU0Ni41NSAzNzUuNTUgNTQ2LjU1IDM2My45IDU0Ni41NSAzNTIuMjUgNTM3LjExIDM0Mi44MSA1MjUuNDYgMzQyLjgxWiI+PC9wYXRoPjxwYXRoIGZpbGwtb3BhY2l0eT0iMSIgZmlsbC1ydWxlPSJub256ZXJvIiBmaWxsPSIjRkZGRkZGIiBkPSJNNDc0LjA1IDMzNi4zM0M0NzQuNjggMzM2LjMzIDQ3NS4xOSAzMzYuODQgNDc1LjE5IDMzNy40N0w0NzUuMTkgMzQ0Ljg3QzQ3NS4xOSAzNDUuNSA0NzQuNjggMzQ2LjAxIDQ3NC4wNSAzNDYuMDFMNDY2LjY1IDM0Ni4wMUM0NjYuMDIgMzQ2LjAxIDQ2NS41MSAzNDUuNSA0NjUuNTEgMzQ0Ljg3TDQ2NS41MSAzMzcuNDdDNDY1LjUxIDMzNi44NCA0NjYuMDIgMzM2LjMzIDQ2Ni42NSAzMzYuMzNaIj48L3BhdGg+PHBhdGggZmlsbC1vcGFjaXR5PSIxIiBmaWxsLXJ1bGU9Im5vbnplcm8iIGZpbGw9IiNGRkZGRkYiIGQ9Ik00NzQuMDIgMzYyLjMxQzQ3NC42NjYgMzYyLjMxIDQ3NS4xOSAzNjIuODM0IDQ3NS4xOSAzNjMuNDhMNDc1LjE5IDM4My44MUM0NzUuMTkgMzg0LjQ1NiA0NzQuNjY2IDM4NC45OCA0NzQuMDIgMzg0Ljk4TDQ1My42OSAzODQuOThDNDUzLjA0NCAzODQuOTggNDUyLjUyIDM4NC40NTYgNDUyLjUyIDM4My44MUw0NTIuNTIgMzYzLjQ4QzQ1Mi41MiAzNjIuODM0IDQ1My4wNDQgMzYyLjMxIDQ1My42OSAzNjIuMzFaIj48L3BhdGg+PHBhdGggZmlsbC1vcGFjaXR5PSIxIiBmaWxsLXJ1bGU9Im5vbnplcm8iIGZpbGw9IiNGRkZGRkYiIGQ9Ik00NzQuMDUgMzQ5LjMyQzQ3NC42OCAzNDkuMzIgNDc1LjE5IDM0OS44MyA0NzUuMTkgMzUwLjQ2TDQ3NS4xOSAzNTcuODZDNDc1LjE5IDM1OC40OSA0NzQuNjggMzU5IDQ3NC4wNSAzNTlMNDY2LjY1IDM1OUM0NjYuMDIgMzU5IDQ2NS41MSAzNTguNDkgNDY1LjUxIDM1Ny44Nkw0NjUuNTEgMzUwLjQ2QzQ2NS41MSAzNDkuODMgNDY2LjAyIDM0OS4zMiA0NjYuNjUgMzQ5LjMyWiI+PC9wYXRoPjxwYXRoIGZpbGwtb3BhY2l0eT0iMSIgZmlsbC1ydWxlPSJub256ZXJvIiBmaWxsPSIjRkZGRkZGIiBkPSJNNDYxLjA2IDM0OS4zMkM0NjEuNjkgMzQ5LjMyIDQ2Mi4yIDM0OS44MyA0NjIuMiAzNTAuNDZMNDYyLjIgMzU3Ljg2QzQ2Mi4yIDM1OC40OSA0NjEuNjkgMzU5IDQ2MS4wNiAzNTlMNDUzLjY2IDM1OUM0NTMuMDMgMzU5IDQ1Mi41MiAzNTguNDkgNDUyLjUyIDM1Ny44Nkw0NTIuNTIgMzUwLjQ2QzQ1Mi41MiAzNDkuODMgNDUzLjAzIDM0OS4zMiA0NTMuNjYgMzQ5LjMyWiI+PC9wYXRoPjxwYXRoIGZpbGwtb3BhY2l0eT0iMSIgZmlsbC1ydWxlPSJub256ZXJvIiBmaWxsPSIjRkZGRkZGIiBkPSJNNDQ4LjA3IDM3NS4zQzQ0OC43IDM3NS4zIDQ0OS4yMSAzNzUuODEgNDQ5LjIxIDM3Ni40NEw0NDkuMjEgMzgzLjg0QzQ0OS4yMSAzODQuNDcgNDQ4LjcgMzg0Ljk4IDQ0OC4wNyAzODQuOThMNDQwLjY3IDM4NC45OEM0NDAuMDQgMzg0Ljk4IDQzOS41MyAzODQuNDcgNDM5LjUzIDM4My44NEw0MzkuNTMgMzc2LjQ0QzQzOS41MyAzNzUuODEgNDQwLjA0IDM3NS4zIDQ0MC42NyAzNzUuM1oiPjwvcGF0aD48cGF0aCBmaWxsLW9wYWNpdHk9IjEiIGZpbGwtcnVsZT0ibm9uemVybyIgZmlsbD0iI0ZGRkZGRiIgZD0iTTQzNS4wOCAzNjguODFDNDM1LjcxIDM2OC44MSA0MzYuMjIgMzY5LjMyIDQzNi4yMiAzNjkuOTVMNDM2LjIyIDM3Ny4zNUM0MzYuMjIgMzc3Ljk4IDQzNS43MSAzNzguNDkgNDM1LjA4IDM3OC40OUw0MjcuNjggMzc4LjQ5QzQyNy4wNSAzNzguNDkgNDI2LjU0IDM3Ny45OCA0MjYuNTQgMzc3LjM1TDQyNi41NCAzNjkuOTVDNDI2LjU0IDM2OS4zMiA0MjcuMDUgMzY4LjgxIDQyNy42OCAzNjguODFaIj48L3BhdGg+PHBhdGggZmlsbC1vcGFjaXR5PSIxIiBmaWxsLXJ1bGU9Im5vbnplcm8iIGZpbGw9IiNGRkZGRkYiIGQ9Ik00NDguMDcgMzYyLjMxQzQ0OC43IDM2Mi4zMSA0NDkuMjEgMzYyLjgyIDQ0OS4yMSAzNjMuNDVMNDQ5LjIxIDM3MC44NUM0NDkuMjEgMzcxLjQ4IDQ0OC43IDM3MS45OSA0NDguMDcgMzcxLjk5TDQ0MC42NyAzNzEuOTlDNDQwLjA0IDM3MS45OSA0MzkuNTMgMzcxLjQ4IDQzOS41MyAzNzAuODVMNDM5LjUzIDM2My40NUM0MzkuNTMgMzYyLjgyIDQ0MC4wNCAzNjIuMzEgNDQwLjY3IDM2Mi4zMVoiPjwvcGF0aD48cGF0aCBmaWxsLW9wYWNpdHk9IjEiIGZpbGwtcnVsZT0ibm9uemVybyIgZmlsbD0iI0ZGRkZGRiIgZD0iTTQ0MS41NyAzNDIuODJDNDQyLjIgMzQyLjgyIDQ0Mi43MSAzNDMuMzMgNDQyLjcxIDM0My45Nkw0NDIuNzEgMzUxLjM2QzQ0Mi43MSAzNTEuOTkgNDQyLjIgMzUyLjUgNDQxLjU3IDM1Mi41TDQzNC4xNyAzNTIuNUM0MzMuNTQgMzUyLjUgNDMzLjAzIDM1MS45OSA0MzMuMDMgMzUxLjM2TDQzMy4wMyAzNDMuOTZDNDMzLjAzIDM0My4zMyA0MzMuNTQgMzQyLjgyIDQzNC4xNyAzNDIuODJaIj48L3BhdGg+PC9nPjwvZz48L2c+PC9nPjwvZz48L3N2Zz4="
+    },
+    {
+      "name": "Image",
+      "tileType": "IMAGE",
+      "configured": true,
+      "bounds": {
+        "top": 152,
+        "left": 1596,
+        "width": 722,
+        "height": 152
+      },
+      "tileFilter": {},
+      "isAutoRefreshDisabled": false,
+      "image": "data:image/svg+xml;base64,PHN2ZyBvdmVyZmxvdz0iaGlkZGVuIiB4bWw6c3BhY2U9InByZXNlcnZlIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiBoZWlnaHQ9IjE1MiIgd2lkdGg9IjQ4OCI+PGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTM5NiAtMjg0KSI+PGc+PGc+PGc+PGc+PHBhdGggZmlsbC1vcGFjaXR5PSIxIiBmaWxsLXJ1bGU9Im5vbnplcm8iIGZpbGw9IiNGRkZGRkYiIGQ9Ik01NzkuOTYgMzQ0LjExIDU4Mi44NCAzNDQuMTEgNTgyLjg0IDMyMC4wOCA1NzkuOTYgMzIwLjA4IDU3OS45NiAzMTYuMzUgNTg5LjcyIDMxNi4zNSA1ODkuNzIgMzIwLjA4IDU4Ni44NCAzMjAuMDggNTg2Ljg0IDM0NC4xMSA1ODkuNzIgMzQ0LjExIDU4OS43MiAzNDcuODQgNTc5Ljk2IDM0Ny44NCA1NzkuOTYgMzQ0LjExWiI+PC9wYXRoPjxwYXRoIGZpbGwtb3BhY2l0eT0iMSIgZmlsbC1ydWxlPSJub256ZXJvIiBmaWxsPSIjRkZGRkZGIiBkPSJNNjA1LjA2IDMyNy42QzYwMS41MSAzMjcuNiA1OTkuNDQgMzI5LjggNTk5LjQ0IDMzMy44NUw1OTkuNDQgMzQ3Ljg0IDU5NS41MiAzNDcuODQgNTk1LjUyIDMyNC42NyA1OTguNzYgMzI0LjY3IDU5OC44NSAzMjkuMzVDNTk5LjkzIDMyNS45NyA2MDIuNjMgMzI0IDYwNi40MSAzMjQgNjExLjIzIDMyNCA2MTQuMDEgMzI3LjE5IDYxNC4wMSAzMzMuMDlMNjE0LjAxIDM0Ny44NSA2MTAuMDUgMzQ3Ljg1IDYxMC4wNSAzMzMuNzJDNjEwLjA1IDMyOS42MyA2MDguNDcgMzI3LjYgNjA1LjA1IDMyNy42WiI+PC9wYXRoPjxwYXRoIGZpbGwtb3BhY2l0eT0iMSIgZmlsbC1ydWxlPSJub256ZXJvIiBmaWxsPSIjRkZGRkZGIiBkPSJNNjI4LjUyIDMxNC41NSA2MzIuMzkgMzE0LjYgNjMyLjM5IDMxOC4xNSA2MjguMzkgMzE4LjE1QzYyNi43NyAzMTguMTUgNjI1LjkyIDMxOS4zNiA2MjUuOTIgMzIxLjdMNjI1LjkyIDMyNC42NyA2MzIuMDQgMzI0LjY3IDYzMi4wNCAzMjguMTMgNjI1LjkyIDMyOC4xMyA2MjUuOTIgMzQ3Ljg0IDYyMiAzNDcuODQgNjIyIDMyOC4xMyA2MTguMTggMzI4LjEzIDYxOC4xOCAzMjQuNjcgNjIyIDMyNC42NyA2MjIgMzIxLjc5QzYyMiAzMTcuMTEgNjI0LjM0IDMxNC41IDYyOC41MyAzMTQuNTRaIj48L3BhdGg+PHBhdGggZmlsbC1vcGFjaXR5PSIxIiBmaWxsLXJ1bGU9Im5vbnplcm8iIGZpbGw9IiNGRkZGRkYiIGQ9Ik02NDAuMzkgMzQ3Ljg1IDYzNi40MyAzNDcuODUgNjM2LjQzIDMyNC42OCA2MzkuODUgMzI0LjY4IDYzOS45NCAzMzAuODlDNjQwLjcxIDMyNi44IDY0Mi41NSAzMjQuMSA2NDYuNTYgMzI0LjEgNjQ3LjczIDMyNC4xIDY0OC42OCAzMjQuMzIgNjQ5LjM1IDMyNC41NUw2NDguNTQgMzI4LjUxQzY0Ny44MiAzMjguMjggNjQ3LjEgMzI4LjE1IDY0Ni4zNCAzMjguMTUgNjQyLjQyIDMyOC4xNSA2NDAuNCAzMzEuMyA2NDAuNCAzMzYuODNMNjQwLjQgMzQ3Ljg1WiI+PC9wYXRoPjxwYXRoIGZpbGwtb3BhY2l0eT0iMSIgZmlsbC1ydWxlPSJub256ZXJvIiBmaWxsPSIjRkZGRkZGIiBkPSJNNjUyLjM1IDM0MS4xOUM2NTIuMzUgMzM2LjIgNjU2LjYyIDMzMy44MSA2NjIuMiAzMzMuODFMNjY3LjI4IDMzMy44MSA2NjcuMjQgMzMxLjdDNjY3LjIgMzI4LjY4IDY2NS4yNiAzMjcuNjEgNjYyLjA3IDMyNy42MSA2NTkuNTUgMzI3LjYxIDY1Ni45OSAzMjguMjggNjU1LjE0IDMyOS4xNEw2NTMuNzQgMzI1LjlDNjU2LjQgMzI0LjY0IDY1OS41IDMyNC4wMSA2NjIuMjQgMzI0LjAxIDY2Ny4xOSAzMjQuMDEgNjcxLjIgMzI2LjAzIDY3MS4yIDMzMS44NEw2NzEuMiAzNDcuODYgNjY3Ljk2IDM0Ny44NiA2NjcuNzggMzQ0LjA4QzY2Ni41NyAzNDYuOTYgNjYzLjkxIDM0OC41MyA2NjAuNCAzNDguNTMgNjU1LjY4IDM0OC41MyA2NTIuMzUgMzQ1Ljc5IDY1Mi4zNSAzNDEuNTZMNjUyLjM1IDM0MS4yWk02NjAuOTQgMzQ1LjM3QzY2NS4yNiAzNDUuMzcgNjY3LjM3IDM0My4zIDY2Ny4zMyAzMzkuMTJMNjY3LjI5IDMzNy4wNSA2NjIuMTIgMzM3LjA1QzY1OC4yIDMzNy4wNSA2NTYuMTggMzM4LjQ5IDY1Ni4xOCAzNDEuMTlMNjU2LjE4IDM0MS41NUM2NTYuMTggMzQ0LjA3IDY1Ny44NSAzNDUuMzcgNjYwLjk1IDM0NS4zN1oiPjwvcGF0aD48cGF0aCBmaWxsLW9wYWNpdHk9IjEiIGZpbGwtcnVsZT0ibm9uemVybyIgZmlsbD0iI0ZGRkZGRiIgZD0iTTY3NS45NSAzNDUuNiA2NzcuOTggMzQyLjYzQzY4MCAzNDQuMDcgNjgyLjUyIDM0NC45NyA2ODUuMTMgMzQ0Ljk3IDY4Ny40NyAzNDQuOTcgNjg5LjY3IDM0My44OSA2ODkuNjMgMzQxLjQyIDY4OS41OSAzMzkuNDQgNjg4LjEgMzM4LjQ1IDY4Ni4zIDMzOC4xOEw2ODMuMDIgMzM3LjY5QzY3OS4zNyAzMzcuMTUgNjc2LjY4IDMzNC45OSA2NzYuNzIgMzMwLjkgNjc2Ljc2IDMyNi42NyA2NzkuNjkgMzI0LjAyIDY4NC43NyAzMjQuMDIgNjg3LjU2IDMyNC4wMiA2OTAuNDggMzI0Ljc5IDY5Mi42OSAzMjUuOTFMNjkxLjMgMzI5LjI0QzY4OS44NiAzMjguNDggNjg3LjQ3IDMyNy42MiA2ODQuNzggMzI3LjYyIDY4Mi4zNSAzMjcuNjIgNjgwLjM3IDMyOC43IDY4MC4zNyAzMzAuOSA2ODAuMzcgMzMyLjg4IDY4MS45IDMzMy44NyA2ODMuODMgMzM0LjE4TDY4Ny4wMyAzMzQuNjhDNjkwLjcyIDMzNS4yNiA2OTMuMzcgMzM3LjQzIDY5My4zNyAzNDEuNjEgNjkzLjM3IDM0Ni4xMSA2OTAuMzEgMzQ4LjU4IDY4NC44MiAzNDguNTQgNjgxLjMxIDM0OC41IDY3OC4zOSAzNDcuNDIgNjc1Ljk1IDM0NS42MloiPjwvcGF0aD48cGF0aCBmaWxsLW9wYWNpdHk9IjEiIGZpbGwtcnVsZT0ibm9uemVybyIgZmlsbD0iI0ZGRkZGRiIgZD0iTTY5OS45NCAzNDEuMzIgNjk5Ljk0IDMyOC4xNCA2OTYuOTcgMzI4LjE0IDY5Ni45NyAzMjUuMTIgNjk4LjQ2IDMyNS4xMkM2OTkuNTggMzI1LjEyIDY5OS45NSAzMjQuNzYgNjk5Ljk1IDMyMy42NEw2OTkuOTUgMzE5LjE4IDcwMy45MSAzMTkuMTggNzAzLjkxIDMyNC42NyA3MDkuOTkgMzI0LjY3IDcwOS45OSAzMjguMTMgNzAzLjkxIDMyOC4xMyA3MDMuOTEgMzQxLjMxQzcwMy45MSAzNDMuNjUgNzA0LjcyIDM0NC4zNyA3MDcuODMgMzQ0LjM3TDcwOS45OSAzNDQuMzcgNzA5Ljk5IDM0OC4wMiA3MDcuMiAzNDguMDJDNzAyLjA3IDM0OC4wMiA2OTkuOTYgMzQ2LjQ5IDY5OS45NiAzNDEuMzFaIj48L3BhdGg+PHBhdGggZmlsbC1vcGFjaXR5PSIxIiBmaWxsLXJ1bGU9Im5vbnplcm8iIGZpbGw9IiNGRkZGRkYiIGQ9Ik03MTguODcgMzQ3Ljg1IDcxNC45MSAzNDcuODUgNzE0LjkxIDMyNC42OCA3MTguMzMgMzI0LjY4IDcxOC40MiAzMzAuODlDNzE5LjE5IDMyNi44IDcyMS4wMyAzMjQuMSA3MjUuMDQgMzI0LjEgNzI2LjIxIDMyNC4xIDcyNy4xNiAzMjQuMzIgNzI3LjgzIDMyNC41NUw3MjcuMDIgMzI4LjUxQzcyNi4zIDMyOC4yOCA3MjUuNTggMzI4LjE1IDcyNC44MiAzMjguMTUgNzIwLjkgMzI4LjE1IDcxOC44OCAzMzEuMyA3MTguODggMzM2LjgzTDcxOC44OCAzNDcuODVaIj48L3BhdGg+PHBhdGggZmlsbC1vcGFjaXR5PSIxIiBmaWxsLXJ1bGU9Im5vbnplcm8iIGZpbGw9IiNGRkZGRkYiIGQ9Ik03NDEuNDMgMzQ0LjkyQzc0NC42NyAzNDQuOTIgNzQ2Ljc0IDM0Mi43NiA3NDYuNzQgMzM4LjY3TDc0Ni43NCAzMjQuNjggNzUwLjY2IDMyNC42OCA3NTAuNjYgMzQ3Ljg1IDc0Ny40MiAzNDcuODUgNzQ3LjMzIDM0My4wNEM3NDYuMzkgMzQ2LjQyIDc0NC4xOCAzNDguNTMgNzQwLjI3IDM0OC41MyA3MzUuMzcgMzQ4LjUzIDczMi4xNyAzNDUuMiA3MzIuMTcgMzM5LjU4TDczMi4xNyAzMjQuNjkgNzM2LjEzIDMyNC42OSA3MzYuMTMgMzM5LjEzQzczNi4xMyAzNDIuNTkgNzM4LjA2IDM0NC45MyA3NDEuNDQgMzQ0LjkzWiI+PC9wYXRoPjxwYXRoIGZpbGwtb3BhY2l0eT0iMSIgZmlsbC1ydWxlPSJub256ZXJvIiBmaWxsPSIjRkZGRkZGIiBkPSJNNzU2LjAzIDMzNy45NSA3NTYuMDMgMzM1LjAyQzc1Ni4wMyAzMjcuODcgNzU5LjU5IDMyNCA3NjYuMiAzMjQgNzY4LjU4IDMyNCA3NzAuNzQgMzI0LjUgNzcyLjcyIDMyNS41OEw3NzEuMTUgMzI4LjU5Qzc2OS42MiAzMjcuODIgNzY4LjA0IDMyNy40NyA3NjYuMzggMzI3LjQ3IDc2Mi4wMiAzMjcuNDcgNzU5Ljk5IDMyOS45IDc1OS45OSAzMzUuMDNMNzU5Ljk5IDMzNy45NkM3NTkuOTkgMzQyLjY0IDc2Mi4zMyAzNDUuMiA3NjYuMjQgMzQ1LjIgNzY4LjE4IDM0NS4yIDc2OS45OCAzNDQuNTcgNzcxLjUgMzQzLjQ5TDc3My4zIDM0Ni4zMkM3NzEuMzcgMzQ3LjcyIDc2OC45OCAzNDguNTIgNzY2LjEgMzQ4LjUyIDc1OS44OSAzNDguNTIgNzU2LjAyIDM0NC43NCA3NTYuMDIgMzM3Ljk1WiI+PC9wYXRoPjxwYXRoIGZpbGwtb3BhY2l0eT0iMSIgZmlsbC1ydWxlPSJub256ZXJvIiBmaWxsPSIjRkZGRkZGIiBkPSJNNzc5LjY1IDM0MS4zMiA3NzkuNjUgMzI4LjE0IDc3Ni42OCAzMjguMTQgNzc2LjY4IDMyNS4xMiA3NzguMTcgMzI1LjEyQzc3OS4yOSAzMjUuMTIgNzc5LjY2IDMyNC43NiA3NzkuNjYgMzIzLjY0TDc3OS42NiAzMTkuMTggNzgzLjYyIDMxOS4xOCA3ODMuNjIgMzI0LjY3IDc4OS43IDMyNC42NyA3ODkuNyAzMjguMTMgNzgzLjYyIDMyOC4xMyA3ODMuNjIgMzQxLjMxQzc4My42MiAzNDMuNjUgNzg0LjQzIDM0NC4zNyA3ODcuNTQgMzQ0LjM3TDc4OS43IDM0NC4zNyA3ODkuNyAzNDguMDIgNzg2LjkxIDM0OC4wMkM3ODEuNzggMzQ4LjAyIDc3OS42NyAzNDYuNDkgNzc5LjY3IDM0MS4zMVoiPjwvcGF0aD48cGF0aCBmaWxsLW9wYWNpdHk9IjEiIGZpbGwtcnVsZT0ibm9uemVybyIgZmlsbD0iI0ZGRkZGRiIgZD0iTTgwMy44MiAzNDQuOTJDODA3LjA2IDM0NC45MiA4MDkuMTMgMzQyLjc2IDgwOS4xMyAzMzguNjdMODA5LjEzIDMyNC42OCA4MTMuMDUgMzI0LjY4IDgxMy4wNSAzNDcuODUgODA5LjgxIDM0Ny44NSA4MDkuNzIgMzQzLjA0QzgwOC43OCAzNDYuNDIgODA2LjU3IDM0OC41MyA4MDIuNjYgMzQ4LjUzIDc5Ny43NiAzNDguNTMgNzk0LjU2IDM0NS4yIDc5NC41NiAzMzkuNThMNzk0LjU2IDMyNC42OSA3OTguNTIgMzI0LjY5IDc5OC41MiAzMzkuMTNDNzk4LjUyIDM0Mi41OSA4MDAuNDUgMzQ0LjkzIDgwMy44MyAzNDQuOTNaIj48L3BhdGg+PHBhdGggZmlsbC1vcGFjaXR5PSIxIiBmaWxsLXJ1bGU9Im5vbnplcm8iIGZpbGw9IiNGRkZGRkYiIGQ9Ik04MjMuMjMgMzQ3Ljg1IDgxOS4yNyAzNDcuODUgODE5LjI3IDMyNC42OCA4MjIuNjkgMzI0LjY4IDgyMi43OCAzMzAuODlDODIzLjU1IDMyNi44IDgyNS4zOSAzMjQuMSA4MjkuNCAzMjQuMSA4MzAuNTcgMzI0LjEgODMxLjUyIDMyNC4zMiA4MzIuMTkgMzI0LjU1TDgzMS4zOCAzMjguNTFDODMwLjY2IDMyOC4yOCA4MjkuOTQgMzI4LjE1IDgyOS4xOCAzMjguMTUgODI1LjI2IDMyOC4xNSA4MjMuMjQgMzMxLjMgODIzLjI0IDMzNi44M0w4MjMuMjQgMzQ3Ljg1WiI+PC9wYXRoPjxwYXRoIGZpbGwtb3BhY2l0eT0iMSIgZmlsbC1ydWxlPSJub256ZXJvIiBmaWxsPSIjRkZGRkZGIiBkPSJNODQ1LjIxIDM0OC41MkM4MzkuMzIgMzQ4LjUyIDgzNS4yMiAzNDQuNzkgODM1LjIyIDMzOC44OUw4MzUuMjIgMzMzLjY3QzgzNS4yMiAzMjcuNzMgODM4LjY4IDMyNCA4NDQuNTggMzI0IDg1MC40OCAzMjQgODUzLjggMzI3LjczIDg1My44IDMzMy42N0w4NTMuOCAzMzguMjYgODM5LjE4IDMzOC4yNiA4MzkuMTggMzM4Ljg5QzgzOS4xOCAzNDIuNzYgODQxLjM5IDM0NS4xNCA4NDUuMTcgMzQ1LjE0IDg0Ny4yNCAzNDUuMTQgODQ5LjEzIDM0NC40MiA4NTAuNzkgMzQzLjI1TDg1Mi41NSAzNDYuMDhDODUwLjYxIDM0Ny42MSA4NDguMDkgMzQ4LjUxIDg0NS4yMiAzNDguNTFaTTg1MC4wNyAzMzQuODkgODUwLjA3IDMzMy42OEM4NTAuMDcgMzI5LjgxIDg0OC4wOSAzMjcuMzggODQ0LjU4IDMyNy4zOCA4NDEuMDcgMzI3LjM4IDgzOS4xOCAzMjkuODEgODM5LjE4IDMzMy42OEw4MzkuMTggMzM0Ljg5IDg1MC4wNyAzMzQuODlaIj48L3BhdGg+PHBhdGggZmlsbC1vcGFjaXR5PSIxIiBmaWxsLXJ1bGU9Im5vbnplcm8iIGZpbGw9IiNGRkZGRkYiIGQ9Ik01NzkuNiAzODUuMzIgNTc5LjYgMzc1LjMzQzU3OS42IDM2OC4zMSA1ODQuMSAzNjMuNjggNTkwLjk0IDM2My42OCA1OTcuNzggMzYzLjY4IDYwMi4xIDM2OC4xOCA2MDIuMSAzNzUuMDJMNjAyLjEgMzg1LjAxQzYwMi4xIDM5MS45NCA1OTcuNiAzOTYuNTMgNTkwLjc2IDM5Ni41MyA1ODMuOTIgMzk2LjUzIDU3OS42IDM5Mi4wOCA1NzkuNiAzODUuMzNaTTU5MC45NCAzOTIuNzlDNTk1LjM1IDM5Mi43OSA1OTggMzkwIDU5OCAzODUuMzJMNTk4IDM3NS4zM0M1OTggMzcwLjM4IDU5NS4zIDM2Ny40MSA1OTAuNzYgMzY3LjQxIDU4Ni4yMiAzNjcuNDEgNTgzLjcgMzcwLjI0IDU4My43IDM3NS4wMUw1ODMuNyAzODVDNTgzLjcgMzg5Ljg2IDU4Ni40IDM5Mi43OCA1OTAuOTQgMzkyLjc4WiI+PC9wYXRoPjxwYXRoIGZpbGwtb3BhY2l0eT0iMSIgZmlsbC1ydWxlPSJub256ZXJvIiBmaWxsPSIjRkZGRkZGIiBkPSJNNjExLjgxIDM5MS45MyA2MTEuNDUgMzk1Ljg1IDYwOC4yMSAzOTUuODUgNjA4LjIxIDM2MyA2MTIuMTMgMzYzIDYxMi4xMyAzNzYuMTRDNjEzLjM0IDM3My41OCA2MTUuNTkgMzcyIDYxOC44OCAzNzIgNjIzLjgzIDM3MiA2MjYuNzEgMzc1LjUxIDYyNi43MSAzODEuNDVMNjI2LjcxIDM4Ny4xMkM2MjYuNzEgMzkzLjAxIDYyMy41NiAzOTYuNTIgNjE4LjU2IDM5Ni41MiA2MTUuMTkgMzk2LjUyIDYxMi44OSAzOTQuOSA2MTEuODEgMzkxLjkzWk02MTcuMzUgMzkyLjkyQzYyMC42OCAzOTIuOTIgNjIyLjc1IDM5MC40OSA2MjIuNzUgMzg2LjU4TDYyMi43NSAzODEuOTVDNjIyLjc1IDM3OC4wMyA2MjAuNjggMzc1LjYxIDYxNy4zNSAzNzUuNjEgNjE0LjIgMzc1LjYxIDYxMi4xMyAzNzcuNzcgNjEyLjEzIDM4MS40MUw2MTIuMTMgMzg3LjEyQzYxMi4xNyAzOTAuNzYgNjE0LjIgMzkyLjkyIDYxNy4zNSAzOTIuOTJaIj48L3BhdGg+PHBhdGggZmlsbC1vcGFjaXR5PSIxIiBmaWxsLXJ1bGU9Im5vbnplcm8iIGZpbGw9IiNGRkZGRkYiIGQ9Ik02MzAuNTcgMzkzLjYgNjMyLjYgMzkwLjYzQzYzNC42MiAzOTIuMDcgNjM3LjE0IDM5Mi45NyA2MzkuNzUgMzkyLjk3IDY0Mi4wOSAzOTIuOTcgNjQ0LjI5IDM5MS44OSA2NDQuMjUgMzg5LjQyIDY0NC4yMSAzODcuNDQgNjQyLjcyIDM4Ni40NSA2NDAuOTIgMzg2LjE4TDYzNy42NCAzODUuNjlDNjMzLjk5IDM4NS4xNSA2MzEuMyAzODIuOTkgNjMxLjM0IDM3OC45IDYzMS4zOCAzNzQuNjcgNjM0LjMxIDM3Mi4wMiA2MzkuMzkgMzcyLjAyIDY0Mi4xOCAzNzIuMDIgNjQ1LjEgMzcyLjc5IDY0Ny4zMSAzNzMuOTFMNjQ1LjkyIDM3Ny4yNEM2NDQuNDggMzc2LjQ4IDY0Mi4wOSAzNzUuNjIgNjM5LjQgMzc1LjYyIDYzNi45NyAzNzUuNjIgNjM0Ljk5IDM3Ni43IDYzNC45OSAzNzguOSA2MzQuOTkgMzgwLjg4IDYzNi41MiAzODEuODcgNjM4LjQ1IDM4Mi4xOEw2NDEuNjUgMzgyLjY4QzY0NS4zNCAzODMuMjYgNjQ3Ljk5IDM4NS40MyA2NDcuOTkgMzg5LjYxIDY0Ny45OSAzOTQuMTEgNjQ0LjkzIDM5Ni41OCA2MzkuNDQgMzk2LjU0IDYzNS45MyAzOTYuNSA2MzMuMDEgMzk1LjQyIDYzMC41NyAzOTMuNjJaIj48L3BhdGg+PHBhdGggZmlsbC1vcGFjaXR5PSIxIiBmaWxsLXJ1bGU9Im5vbnplcm8iIGZpbGw9IiNGRkZGRkYiIGQ9Ik02NjIuNDYgMzk2LjUyQzY1Ni41NyAzOTYuNTIgNjUyLjQ3IDM5Mi43OSA2NTIuNDcgMzg2Ljg5TDY1Mi40NyAzODEuNjdDNjUyLjQ3IDM3NS43MyA2NTUuOTMgMzcyIDY2MS44MyAzNzIgNjY3LjczIDM3MiA2NzEuMDUgMzc1LjczIDY3MS4wNSAzODEuNjdMNjcxLjA1IDM4Ni4yNiA2NTYuNDMgMzg2LjI2IDY1Ni40MyAzODYuODlDNjU2LjQzIDM5MC43NiA2NTguNjQgMzkzLjE0IDY2Mi40MiAzOTMuMTQgNjY0LjQ5IDM5My4xNCA2NjYuMzggMzkyLjQyIDY2OC4wNCAzOTEuMjVMNjY5LjggMzk0LjA4QzY2Ny44NiAzOTUuNjEgNjY1LjM0IDM5Ni41MSA2NjIuNDcgMzk2LjUxWk02NjcuMzIgMzgyLjg5IDY2Ny4zMiAzODEuNjhDNjY3LjMyIDM3Ny44MSA2NjUuMzQgMzc1LjM4IDY2MS44MyAzNzUuMzggNjU4LjMyIDM3NS4zOCA2NTYuNDMgMzc3LjgxIDY1Ni40MyAzODEuNjhMNjU2LjQzIDM4Mi44OSA2NjcuMzIgMzgyLjg5WiI+PC9wYXRoPjxwYXRoIGZpbGwtb3BhY2l0eT0iMSIgZmlsbC1ydWxlPSJub256ZXJvIiBmaWxsPSIjRkZGRkZGIiBkPSJNNjgwLjIzIDM5NS44NSA2NzYuMjcgMzk1Ljg1IDY3Ni4yNyAzNzIuNjggNjc5LjY5IDM3Mi42OCA2NzkuNzggMzc4Ljg5QzY4MC41NSAzNzQuOCA2ODIuMzkgMzcyLjEgNjg2LjQgMzcyLjEgNjg3LjU3IDM3Mi4xIDY4OC41MiAzNzIuMzIgNjg5LjE5IDM3Mi41NUw2ODguMzggMzc2LjUxQzY4Ny42NiAzNzYuMjggNjg2Ljk0IDM3Ni4xNSA2ODYuMTggMzc2LjE1IDY4Mi4yNiAzNzYuMTUgNjgwLjI0IDM3OS4zIDY4MC4yNCAzODQuODNMNjgwLjI0IDM5NS44NVoiPjwvcGF0aD48cGF0aCBmaWxsLW9wYWNpdHk9IjEiIGZpbGwtcnVsZT0ibm9uemVybyIgZmlsbD0iI0ZGRkZGRiIgZD0iTTY5Mi4zMyAzNzIuNjggNjk2LjY1IDM3Mi42OCA3MDIuMjcgMzkyLjEyIDcwOC4xMiAzNzIuNjggNzEyLjMgMzcyLjY4IDcwNC44MyAzOTUuODUgNjk5LjUyIDM5NS44NSA2OTIuMzIgMzcyLjY4WiI+PC9wYXRoPjxwYXRoIGZpbGwtb3BhY2l0eT0iMSIgZmlsbC1ydWxlPSJub256ZXJvIiBmaWxsPSIjRkZGRkZGIiBkPSJNNzE1LjI1IDM4OS4xOUM3MTUuMjUgMzg0LjIgNzE5LjUyIDM4MS44MSA3MjUuMSAzODEuODFMNzMwLjE4IDM4MS44MSA3MzAuMTQgMzc5LjdDNzMwLjEgMzc2LjY4IDcyOC4xNiAzNzUuNjEgNzI0Ljk3IDM3NS42MSA3MjIuNDUgMzc1LjYxIDcxOS44OSAzNzYuMjggNzE4LjA0IDM3Ny4xNEw3MTYuNjQgMzczLjlDNzE5LjMgMzcyLjY0IDcyMi40IDM3Mi4wMSA3MjUuMTQgMzcyLjAxIDczMC4wOSAzNzIuMDEgNzM0LjEgMzc0LjAzIDczNC4xIDM3OS44NEw3MzQuMSAzOTUuODYgNzMwLjg2IDM5NS44NiA3MzAuNjggMzkyLjA4QzcyOS40NyAzOTQuOTYgNzI2LjgxIDM5Ni41MyA3MjMuMyAzOTYuNTMgNzE4LjU4IDM5Ni41MyA3MTUuMjUgMzkzLjc5IDcxNS4yNSAzODkuNTZMNzE1LjI1IDM4OS4yWk03MjMuODUgMzkzLjM3QzcyOC4xNyAzOTMuMzcgNzMwLjI4IDM5MS4zIDczMC4yNCAzODcuMTJMNzMwLjIgMzg1LjA1IDcyNS4wMyAzODUuMDVDNzIxLjExIDM4NS4wNSA3MTkuMDkgMzg2LjQ5IDcxOS4wOSAzODkuMTlMNzE5LjA5IDM4OS41NUM3MTkuMDkgMzkyLjA3IDcyMC43NiAzOTMuMzcgNzIzLjg2IDM5My4zN1oiPjwvcGF0aD48cGF0aCBmaWxsLW9wYWNpdHk9IjEiIGZpbGwtcnVsZT0ibm9uemVybyIgZmlsbD0iI0ZGRkZGRiIgZD0iTTc0My44NyAzOTEuOTMgNzQzLjUxIDM5NS44NSA3NDAuMjcgMzk1Ljg1IDc0MC4yNyAzNjMgNzQ0LjE5IDM2MyA3NDQuMTkgMzc2LjE0Qzc0NS40IDM3My41OCA3NDcuNjUgMzcyIDc1MC45NCAzNzIgNzU1Ljg5IDM3MiA3NTguNzcgMzc1LjUxIDc1OC43NyAzODEuNDVMNzU4Ljc3IDM4Ny4xMkM3NTguNzcgMzkzLjAxIDc1NS42MiAzOTYuNTIgNzUwLjYyIDM5Ni41MiA3NDcuMjUgMzk2LjUyIDc0NC45NSAzOTQuOSA3NDMuODcgMzkxLjkzWk03NDkuNCAzOTIuOTJDNzUyLjczIDM5Mi45MiA3NTQuOCAzOTAuNDkgNzU0LjggMzg2LjU4TDc1NC44IDM4MS45NUM3NTQuOCAzNzguMDMgNzUyLjczIDM3NS42MSA3NDkuNCAzNzUuNjEgNzQ2LjI1IDM3NS42MSA3NDQuMTggMzc3Ljc3IDc0NC4xOCAzODEuNDFMNzQ0LjE4IDM4Ny4xMkM3NDQuMjIgMzkwLjc2IDc0Ni4yNSAzOTIuOTIgNzQ5LjQgMzkyLjkyWiI+PC9wYXRoPjxwYXRoIGZpbGwtb3BhY2l0eT0iMSIgZmlsbC1ydWxlPSJub256ZXJvIiBmaWxsPSIjRkZGRkZGIiBkPSJNNzY2LjE4IDM2NC4xM0M3NjcuNjYgMzY0LjEzIDc2OC43NCAzNjUuMjEgNzY4Ljc0IDM2Ni42OSA3NjguNzQgMzY4LjE3IDc2Ny42NiAzNjkuMjUgNzY2LjE4IDM2OS4yNSA3NjQuNyAzNjkuMjUgNzYzLjYxIDM2OC4xNyA3NjMuNjEgMzY2LjY5IDc2My42MSAzNjUuMjEgNzY0LjY5IDM2NC4xMyA3NjYuMTggMzY0LjEzWk03NjQuMiAzNzIuNjggNzY4LjE2IDM3Mi42OCA3NjguMTYgMzk1Ljg1IDc2NC4yIDM5NS44NSA3NjQuMiAzNzIuNjhaIj48L3BhdGg+PHBhdGggZmlsbC1vcGFjaXR5PSIxIiBmaWxsLXJ1bGU9Im5vbnplcm8iIGZpbGw9IiNGRkZGRkYiIGQ9Ik03NzQuMzUgMzg5LjU1IDc3NC4zNSAzNjMgNzc4LjMxIDM2MyA3NzguMzEgMzg5LjkxQzc3OC4zMSAzOTEuNjYgNzc5LjI2IDM5Mi41NyA3ODAuOTcgMzkyLjU3TDc4MC45NyAzOTYuMTdDNzc2LjIgMzk2LjE3IDc3NC4zNSAzOTQuMzMgNzc0LjM1IDM4OS41NloiPjwvcGF0aD48cGF0aCBmaWxsLW9wYWNpdHk9IjEiIGZpbGwtcnVsZT0ibm9uemVybyIgZmlsbD0iI0ZGRkZGRiIgZD0iTTc4Ny45NiAzNjQuMTNDNzg5LjQ0IDM2NC4xMyA3OTAuNTIgMzY1LjIxIDc5MC41MiAzNjYuNjkgNzkwLjUyIDM2OC4xNyA3ODkuNDQgMzY5LjI1IDc4Ny45NiAzNjkuMjUgNzg2LjQ4IDM2OS4yNSA3ODUuMzkgMzY4LjE3IDc4NS4zOSAzNjYuNjkgNzg1LjM5IDM2NS4yMSA3ODYuNDcgMzY0LjEzIDc4Ny45NiAzNjQuMTNaTTc4NS45OCAzNzIuNjggNzg5Ljk0IDM3Mi42OCA3ODkuOTQgMzk1Ljg1IDc4NS45OCAzOTUuODUgNzg1Ljk4IDM3Mi42OFoiPjwvcGF0aD48cGF0aCBmaWxsLW9wYWNpdHk9IjEiIGZpbGwtcnVsZT0ibm9uemVybyIgZmlsbD0iI0ZGRkZGRiIgZD0iTTc5Ny40NCAzODkuMzIgNzk3LjQ0IDM3Ni4xNCA3OTQuNDcgMzc2LjE0IDc5NC40NyAzNzMuMTIgNzk1Ljk2IDM3My4xMkM3OTcuMDggMzczLjEyIDc5Ny40NSAzNzIuNzYgNzk3LjQ1IDM3MS42NEw3OTcuNDUgMzY3LjE4IDgwMS40MSAzNjcuMTggODAxLjQxIDM3Mi42NyA4MDcuNDkgMzcyLjY3IDgwNy40OSAzNzYuMTMgODAxLjQxIDM3Ni4xMyA4MDEuNDEgMzg5LjMxQzgwMS40MSAzOTEuNjUgODAyLjIyIDM5Mi4zNyA4MDUuMzMgMzkyLjM3TDgwNy40OSAzOTIuMzcgODA3LjQ5IDM5Ni4wMiA4MDQuNyAzOTYuMDJDNzk5LjU3IDM5Ni4wMiA3OTcuNDYgMzk0LjQ5IDc5Ny40NiAzODkuMzFaIj48L3BhdGg+PHBhdGggZmlsbC1vcGFjaXR5PSIxIiBmaWxsLXJ1bGU9Im5vbnplcm8iIGZpbGw9IiNGRkZGRkYiIGQ9Ik04MTcuMTQgMzk5LjYzQzgxOC4zNSAzOTguNTUgODE4LjY3IDM5Ni43NSA4MTcuOSAzOTQuMjhMODExLjE1IDM3Mi42OCA4MTUuNDcgMzcyLjY4IDgyMC40NyAzOTAuOSA4MjAuODMgMzkyLjg4IDgyMS4xOSAzOTAuOSA4MjYuNDEgMzcyLjY4IDgzMC42NCAzNzIuNjggODIyLjkgMzk2LjkzQzgyMS4xIDQwMi41NSA4MTcuOSA0MDQuNCA4MTMuNTQgNDA0LjcxTDgxMi44NyA0MDAuOThDODE1LjA4IDQwMC44IDgxNi4zOCA0MDAuMzUgODE3LjE0IDM5OS42M1oiPjwvcGF0aD48cGF0aCBmaWxsLW9wYWNpdHk9IjEiIGZpbGwtcnVsZT0ibm9uemVybyIgZmlsbD0iI0ZGRkZGRiIgZD0iTTUyNS40NSAzNDIuODJDNTIxIDM0Mi44MiA1MTYuODcgMzQ0LjIgNTEzLjQ3IDM0Ni41NSA1MTIuNzkgMzQ0LjUyIDUxMS44MiAzNDIuNjMgNTEwLjYxIDM0MC45MyA1MTAuNjEgMzQwLjkzIDUxMC41OSAzNDAuOTQgNTEwLjU5IDM0MC45NSA1MTAuMjUgMzQwLjQ1IDUwOS44OSAzMzkuOTYgNTA5LjUgMzM5LjQ5IDUwOS40MyAzMzkuNDEgNTA5LjM2IDMzOS4zMyA1MDkuMjkgMzM5LjI0IDUwNS40MyAzMzQuNjQgNDk5LjYzIDMzMS43MSA0OTMuMTYgMzMxLjcxIDQ5My4wOCAzMzEuNzEgNDkzIDMzMS43MSA0OTIuOTIgMzMxLjcxIDQ4OC41NiAzMzEuNzYgNDg0LjUxIDMzMy4xMyA0ODEuMTggMzM1LjQ0IDQ4MC44OCAzMzUuNjQgNDgwLjcyIDMzNS45OCA0ODAuNzIgMzM2LjM0TDQ4MC43MiAzODMuODhDNDgwLjcyIDM4NC40OSA0ODEuMjEgMzg0Ljk5IDQ4MS44MyAzODQuOTlMNTI1LjQ2IDM4NC45OUM1MzcuMTEgMzg0Ljk5IDU0Ni41NSAzNzUuNTUgNTQ2LjU1IDM2My45IDU0Ni41NSAzNTIuMjUgNTM3LjExIDM0Mi44MSA1MjUuNDYgMzQyLjgxWiI+PC9wYXRoPjxwYXRoIGZpbGwtb3BhY2l0eT0iMSIgZmlsbC1ydWxlPSJub256ZXJvIiBmaWxsPSIjRkZGRkZGIiBkPSJNNDc0LjA1IDMzNi4zM0M0NzQuNjggMzM2LjMzIDQ3NS4xOSAzMzYuODQgNDc1LjE5IDMzNy40N0w0NzUuMTkgMzQ0Ljg3QzQ3NS4xOSAzNDUuNSA0NzQuNjggMzQ2LjAxIDQ3NC4wNSAzNDYuMDFMNDY2LjY1IDM0Ni4wMUM0NjYuMDIgMzQ2LjAxIDQ2NS41MSAzNDUuNSA0NjUuNTEgMzQ0Ljg3TDQ2NS41MSAzMzcuNDdDNDY1LjUxIDMzNi44NCA0NjYuMDIgMzM2LjMzIDQ2Ni42NSAzMzYuMzNaIj48L3BhdGg+PHBhdGggZmlsbC1vcGFjaXR5PSIxIiBmaWxsLXJ1bGU9Im5vbnplcm8iIGZpbGw9IiNGRkZGRkYiIGQ9Ik00NzQuMDIgMzYyLjMxQzQ3NC42NjYgMzYyLjMxIDQ3NS4xOSAzNjIuODM0IDQ3NS4xOSAzNjMuNDhMNDc1LjE5IDM4My44MUM0NzUuMTkgMzg0LjQ1NiA0NzQuNjY2IDM4NC45OCA0NzQuMDIgMzg0Ljk4TDQ1My42OSAzODQuOThDNDUzLjA0NCAzODQuOTggNDUyLjUyIDM4NC40NTYgNDUyLjUyIDM4My44MUw0NTIuNTIgMzYzLjQ4QzQ1Mi41MiAzNjIuODM0IDQ1My4wNDQgMzYyLjMxIDQ1My42OSAzNjIuMzFaIj48L3BhdGg+PHBhdGggZmlsbC1vcGFjaXR5PSIxIiBmaWxsLXJ1bGU9Im5vbnplcm8iIGZpbGw9IiNGRkZGRkYiIGQ9Ik00NzQuMDUgMzQ5LjMyQzQ3NC42OCAzNDkuMzIgNDc1LjE5IDM0OS44MyA0NzUuMTkgMzUwLjQ2TDQ3NS4xOSAzNTcuODZDNDc1LjE5IDM1OC40OSA0NzQuNjggMzU5IDQ3NC4wNSAzNTlMNDY2LjY1IDM1OUM0NjYuMDIgMzU5IDQ2NS41MSAzNTguNDkgNDY1LjUxIDM1Ny44Nkw0NjUuNTEgMzUwLjQ2QzQ2NS41MSAzNDkuODMgNDY2LjAyIDM0OS4zMiA0NjYuNjUgMzQ5LjMyWiI+PC9wYXRoPjxwYXRoIGZpbGwtb3BhY2l0eT0iMSIgZmlsbC1ydWxlPSJub256ZXJvIiBmaWxsPSIjRkZGRkZGIiBkPSJNNDYxLjA2IDM0OS4zMkM0NjEuNjkgMzQ5LjMyIDQ2Mi4yIDM0OS44MyA0NjIuMiAzNTAuNDZMNDYyLjIgMzU3Ljg2QzQ2Mi4yIDM1OC40OSA0NjEuNjkgMzU5IDQ2MS4wNiAzNTlMNDUzLjY2IDM1OUM0NTMuMDMgMzU5IDQ1Mi41MiAzNTguNDkgNDUyLjUyIDM1Ny44Nkw0NTIuNTIgMzUwLjQ2QzQ1Mi41MiAzNDkuODMgNDUzLjAzIDM0OS4zMiA0NTMuNjYgMzQ5LjMyWiI+PC9wYXRoPjxwYXRoIGZpbGwtb3BhY2l0eT0iMSIgZmlsbC1ydWxlPSJub256ZXJvIiBmaWxsPSIjRkZGRkZGIiBkPSJNNDQ4LjA3IDM3NS4zQzQ0OC43IDM3NS4zIDQ0OS4yMSAzNzUuODEgNDQ5LjIxIDM3Ni40NEw0NDkuMjEgMzgzLjg0QzQ0OS4yMSAzODQuNDcgNDQ4LjcgMzg0Ljk4IDQ0OC4wNyAzODQuOThMNDQwLjY3IDM4NC45OEM0NDAuMDQgMzg0Ljk4IDQzOS41MyAzODQuNDcgNDM5LjUzIDM4My44NEw0MzkuNTMgMzc2LjQ0QzQzOS41MyAzNzUuODEgNDQwLjA0IDM3NS4zIDQ0MC42NyAzNzUuM1oiPjwvcGF0aD48cGF0aCBmaWxsLW9wYWNpdHk9IjEiIGZpbGwtcnVsZT0ibm9uemVybyIgZmlsbD0iI0ZGRkZGRiIgZD0iTTQzNS4wOCAzNjguODFDNDM1LjcxIDM2OC44MSA0MzYuMjIgMzY5LjMyIDQzNi4yMiAzNjkuOTVMNDM2LjIyIDM3Ny4zNUM0MzYuMjIgMzc3Ljk4IDQzNS43MSAzNzguNDkgNDM1LjA4IDM3OC40OUw0MjcuNjggMzc4LjQ5QzQyNy4wNSAzNzguNDkgNDI2LjU0IDM3Ny45OCA0MjYuNTQgMzc3LjM1TDQyNi41NCAzNjkuOTVDNDI2LjU0IDM2OS4zMiA0MjcuMDUgMzY4LjgxIDQyNy42OCAzNjguODFaIj48L3BhdGg+PHBhdGggZmlsbC1vcGFjaXR5PSIxIiBmaWxsLXJ1bGU9Im5vbnplcm8iIGZpbGw9IiNGRkZGRkYiIGQ9Ik00NDguMDcgMzYyLjMxQzQ0OC43IDM2Mi4zMSA0NDkuMjEgMzYyLjgyIDQ0OS4yMSAzNjMuNDVMNDQ5LjIxIDM3MC44NUM0NDkuMjEgMzcxLjQ4IDQ0OC43IDM3MS45OSA0NDguMDcgMzcxLjk5TDQ0MC42NyAzNzEuOTlDNDQwLjA0IDM3MS45OSA0MzkuNTMgMzcxLjQ4IDQzOS41MyAzNzAuODVMNDM5LjUzIDM2My40NUM0MzkuNTMgMzYyLjgyIDQ0MC4wNCAzNjIuMzEgNDQwLjY3IDM2Mi4zMVoiPjwvcGF0aD48cGF0aCBmaWxsLW9wYWNpdHk9IjEiIGZpbGwtcnVsZT0ibm9uemVybyIgZmlsbD0iI0ZGRkZGRiIgZD0iTTQ0MS41NyAzNDIuODJDNDQyLjIgMzQyLjgyIDQ0Mi43MSAzNDMuMzMgNDQyLjcxIDM0My45Nkw0NDIuNzEgMzUxLjM2QzQ0Mi43MSAzNTEuOTkgNDQyLjIgMzUyLjUgNDQxLjU3IDM1Mi41TDQzNC4xNyAzNTIuNUM0MzMuNTQgMzUyLjUgNDMzLjAzIDM1MS45OSA0MzMuMDMgMzUxLjM2TDQzMy4wMyAzNDMuOTZDNDMzLjAzIDM0My4zMyA0MzMuNTQgMzQyLjgyIDQzNC4xNyAzNDIuODJaIj48L3BhdGg+PC9nPjwvZz48L2c+PC9nPjwvZz48L3N2Zz4="
+    },
+    {
+      "name": "Image",
+      "tileType": "IMAGE",
+      "configured": true,
+      "bounds": {
+        "top": 152,
+        "left": 2394,
+        "width": 304,
+        "height": 152
+      },
+      "tileFilter": {},
+      "isAutoRefreshDisabled": false,
+      "image": "data:image/svg+xml;base64,PHN2ZyBvdmVyZmxvdz0iaGlkZGVuIiB4bWw6c3BhY2U9InByZXNlcnZlIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiBoZWlnaHQ9IjIxNyIgd2lkdGg9IjIxNyI+PGRlZnM+PGNsaXBQYXRoIGlkPSJjbGlwMCI+PHJlY3QgaGVpZ2h0PSIyMTciIHdpZHRoPSIyMTciIHk9IjMyNCIgeD0iNjA0Ij48L3JlY3Q+PC9jbGlwUGF0aD48Y2xpcFBhdGggaWQ9ImNsaXAxIj48cmVjdCBoZWlnaHQ9IjIxNyIgd2lkdGg9IjIxNyIgeT0iMzI0IiB4PSI2MDQiPjwvcmVjdD48L2NsaXBQYXRoPjwvZGVmcz48ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtNjA0IC0zMjQpIiBjbGlwLXBhdGg9InVybCgjY2xpcDApIj48ZyBjbGlwLXBhdGg9InVybCgjY2xpcDEpIj48cGF0aCBmaWxsLW9wYWNpdHk9IjEiIGZpbGwtcnVsZT0ibm9uemVybyIgZmlsbD0iI0ZGRkZGRiIgc3Ryb2tlLW9wYWNpdHk9IjEiIHN0cm9rZS1taXRlcmxpbWl0PSI0IiBzdHJva2UtbGluZWpvaW49Im1pdGVyIiBzdHJva2UtbGluZWNhcD0iYnV0dCIgc3Ryb2tlLXdpZHRoPSIzLjAxMzg5IiBzdHJva2U9IiNGRkZGRkYiIGQ9Ik04MTcuMTEyIDQ0My40MSA2ODMuNzQ3IDQ0My40MUM2ODEuODE5IDQ0My40MSA2ODAuMjgyIDQ0NC45NDcgNjgwLjI4MiA0NDYuODc2TDY4MC4yODIgNTM3LjExMkM2ODAuMjgyIDUzOS4wNDEgNjgxLjgxOSA1NDAuNTc4IDY4My43NDcgNTQwLjU3OEw4MTcuMTEyIDU0MC41NzhDODE5LjA0MSA1NDAuNTc4IDgyMC41NzggNTM5LjA0MSA4MjAuNTc4IDUzNy4xMTJMODIwLjU3OCA0NDYuODc2QzgyMC41NzggNDQ0Ljk0NyA4MTkuMDQxIDQ0My40MSA4MTcuMTEyIDQ0My40MVpNODEzLjY0NiA1MzMuNjQ2IDY4Ny4yMTQgNTMzLjY0NiA2ODcuMjE0IDQ1MC4zNDIgODEzLjY0NiA0NTAuMzQyIDgxMy42NDYgNTMzLjY0NlpNNjEwLjkzMiA0MjQuNzI0QzYxMC45MzIgNDA3LjMzNCA2MjEuOTMzIDM5MS45MDMgNjM4LjI2OCAzODYuMjY3IDYzOS4zODMgMzg1Ljg3NSA2NDAuMjI3IDM4NC45NzEgNjQwLjQ5OCAzODMuODI2IDY0Ni43MDcgMzU4LjkzMSA2NjguODU5IDM0MS41MTEgNjk0LjMyNiAzNDEuNTExIDcwNi4yOTEgMzQxLjUxMSA3MTcuNzE0IDM0NS4zMzggNzI3LjM4OSAzNTIuNTcyIDcyOC40MTMgMzUzLjMyNSA3MjkuNzcgMzUzLjQ3NiA3MzAuOTQ1IDM1Mi45MzMgNzM4LjY5MSAzNDkuMzE3IDc0Ni45NDkgMzQ3LjQ3OCA3NTUuNTM4IDM0Ny40NzggNzg3LjgxNyAzNDcuNDc4IDgxNC4wNjggMzczLjkxIDgxNC4wNjggNDA2LjQgODE0LjA2OCA0MTUuNTMyIDgxMi4wNDkgNDI0LjMwMiA4MDguMDcgNDMyLjQ0TDgxNC4zMDkgNDM1LjQ4NEM4MTguNzcgNDI2LjM4MiA4MjEuMDMgNDE2LjYxNyA4MjEuMDMgNDA2LjQgODIxLjAzIDM3MC4wODIgNzkxLjY3NSAzNDAuNTQ2IDc1NS41NjggMzQwLjU0NiA3NDYuNjc3IDM0MC41NDYgNzM4LjA1OCAzNDIuMzI0IDcyOS45MiAzNDUuODIxIDcxOS40MDIgMzM4LjQ2NyA3MDcuMTM1IDMzNC41NzkgNjk0LjM1NiAzMzQuNTc5IDY2Ni4yOTcgMzM0LjU3OSA2NDEuODU0IDM1My4yOTUgNjM0LjI5IDM4MC4zMyA2MTYuMDg2IDM4Ny40MTIgNjA0IDQwNS4wMTMgNjA0IDQyNC43MjQgNjA0IDQ1MC45NzUgNjI1LjIxOCA0NzIuMzEzIDY1MS4zMTggNDcyLjMxM0w2NzAuNTE3IDQ3Mi4zMTMgNjcwLjUxNyA0NjUuMzgyIDY1MS4zMTggNDY1LjM4MkM2MjkuMDQ1IDQ2NS4zODIgNjEwLjkzMiA0NDcuMTQ3IDYxMC45MzIgNDI0LjcyNFpNNzIyLjAyNCA1MDEuNDg4QzcyMC43MjggNTAyLjQ1MiA3MTguODU5IDUwMi45MzUgNzE2LjQxOCA1MDIuOTA0IDcxNC4xNTggNTAyLjkzNSA3MTIuMDc4IDUwMi42MDMgNzEwLjE0OSA1MDEuODUgNzA4LjIyIDUwMS4wOTYgNzA2LjM1MiA1MDAuMDcxIDcwNC41NzMgNDk4Ljc3NUw3MDEuNDM5IDUwNC42ODNDNzAzLjMzOCA1MDYuMjIgNzA1LjU5OCA1MDcuMzY1IDcwOC4yMiA1MDguMTQ5IDcxMC44NDIgNTA4LjkzMiA3MTMuNDk1IDUwOS4zMjQgNzE2LjIwNyA1MDkuMzI0IDcyMC44NDggNTA5LjMyNCA3MjQuNDk1IDUwOC4yMzkgNzI3LjA4NyA1MDYuMDY5IDcyOS42NzkgNTAzLjg5OSA3MzAuOTc1IDUwMC45MTUgNzMwLjk3NSA0OTcuMTQ4IDczMC45NzUgNDkzLjk1MyA3MzAuMDcxIDQ5MS4zMDEgNzI4LjIzMiA0ODkuMjUyIDcyNi4zOTQgNDg3LjIwMiA3MjMuNzEyIDQ4NS44NzYgNzIwLjE1NSA0ODUuMzAzTDcxNS44NzYgNDg0LjYxQzcxMy45MTcgNDg0LjMwOSA3MTIuNDQgNDgzLjY0NiA3MTEuMzg1IDQ4Mi42NTEgNzEwLjMzIDQ4MS42NTcgNzA5LjgxOCA0ODAuNDUxIDcwOS44MTggNDc5LjAzNCA3MDkuODE4IDQ3Ny40NjcgNzEwLjQyIDQ3Ni4yMDEgNzExLjU5NiA0NzUuMjY3IDcxMi43NzEgNDc0LjMwMyA3MTQuNTggNDczLjgyIDcxNy4wMjEgNDczLjgyIDcyMC40ODcgNDczLjgyIDcyNC4xMzQgNDc0LjgxNSA3MjcuOTAxIDQ3Ni44MDRMNzMwLjA3MSA0NzAuNTY1QzcyOC4yMzIgNDY5LjU3MSA3MjYuMTgzIDQ2OC44MTcgNzIzLjg2MiA0NjguMjc1IDcyMS41NDIgNDY3LjczMiA3MTkuMjIxIDQ2Ny40NjEgNzE2LjkgNDY3LjQ2MSA3MTMuODg2IDQ2Ny40NjEgNzExLjMyNSA0NjcuOTEzIDcwOS4yMTUgNDY4Ljg0OCA3MDcuMTA1IDQ2OS43ODIgNzA1LjUwOCA0NzEuMTA4IDcwNC4zNjIgNDcyLjg4NiA3MDMuMjQ3IDQ3NC42NjQgNzAyLjY3NSA0NzYuNzc0IDcwMi42NzUgNDc5LjIxNSA3MDIuNjc1IDQ4Mi41MzEgNzAzLjYwOSA0ODUuMjEzIDcwNS40NDggNDg3LjIzMiA3MDcuMjg2IDQ4OS4yNTIgNzA5LjkzOCA0OTAuNTQ3IDcxMy4zNzQgNDkxLjEyTDcxNy4yMDIgNDkxLjY5M0M3MTkuNTIyIDQ5Mi4wODUgNzIxLjI0IDQ5Mi43NDggNzIyLjMyNSA0OTMuNzQyIDcyMy40MSA0OTQuNzM3IDcyMy45NTMgNDk2LjAwMyA3MjMuOTUzIDQ5Ny41MSA3MjMuOTUzIDQ5OS4xOTcgNzIzLjI5IDUwMC41MjMgNzIxLjk5NCA1MDEuNDg4Wk03NDUuMjkxIDUwNy41NDZDNzQ3LjU1MiA1MDguODEyIDc1MC4yMzQgNTA5LjQ3NSA3NTMuMzM4IDUwOS40NzUgNzU0LjQyMyA1MDkuNDc1IDc1NS40MTggNTA5LjM1NCA3NTYuNDEyIDUwOS4yMDNMNzY0Ljg1MSA1MTUuODM0IDc2OC45OCA1MTAuOTUyIDc2Mi44OTIgNTA2LjQ5MUM3NjQuNDU5IDUwNS4yODUgNzY1LjY5NSA1MDMuNzc4IDc2Ni42NiA1MDEuOTQgNzY3Ljg5NSA0OTkuNTU5IDc2OC40OTggNDk2LjcyNiA3NjguNDk4IDQ5My40NDFMNzY4LjQ5OCA0ODMuMDEzQzc2OC40OTggNDc5Ljg0OCA3NjcuODk1IDQ3Ny4wNzUgNzY2LjY5IDQ3NC43MjUgNzY1LjQ4NCA0NzIuMzc0IDc2My43MzYgNDcwLjU2NSA3NjEuNDc2IDQ2OS4zIDc1OS4yMTUgNDY4LjAzNCA3NTYuNTMzIDQ2Ny40MDEgNzUzLjQyOSA0NjcuNDAxIDc1MC4zMjQgNDY3LjQwMSA3NDcuNjcyIDQ2OC4wNjQgNzQ1LjQxMiA0NjkuMzkgNzQzLjE1MSA0NzAuNzE2IDc0MS40MDMgNDcyLjU4NSA3NDAuMTY3IDQ3NC45OTYgNzM4LjkzMiA0NzcuNDA3IDczOC4yOTkgNDgwLjI3IDczOC4yOTkgNDgzLjU1NUw3MzguMjk5IDQ5My44MDJDNzM4LjI5OSA0OTYuOTY3IDczOC45MDIgNDk5Ljc0IDc0MC4xMDcgNTAyLjA5MSA3NDEuMzEzIDUwNC40NDIgNzQzLjAzMSA1MDYuMjUgNzQ1LjMyMSA1MDcuNTQ2Wk03NDUuMTQgNDgzLjI4NEM3NDUuMTQgNDgwLjI0IDc0NS44MzQgNDc3Ljg1OSA3NDcuMjUgNDc2LjE3MSA3NDguNjY3IDQ3NC40ODMgNzUwLjY1NiA0NzMuNjQgNzUzLjI3OCA0NzMuNjQgNzU1LjkgNDczLjY0IDc1OC4wMSA0NzQuNDgzIDc1OS40NTYgNDc2LjIwMSA3NjAuOTAzIDQ3Ny45MTkgNzYxLjYyNiA0ODAuMyA3NjEuNjI2IDQ4My4zNzRMNzYxLjYyNiA0OTMuNjgyQzc2MS42MjYgNDk2LjY2NiA3NjAuOTAzIDQ5OC45ODYgNzU5LjQ4NyA1MDAuNjc0IDc1OC4wNyA1MDIuMzYyIDc1Ni4wNTEgNTAzLjIwNiA3NTMuNDU5IDUwMy4yMDYgNzUwLjg2NyA1MDMuMjA2IDc0OC43ODcgNTAyLjM2MiA3NDcuMzQxIDUwMC42NDQgNzQ1Ljg5NCA0OTguOTU2IDc0NS4xNzEgNDk2LjU3NSA3NDUuMTcxIDQ5My41NjFMNzQ1LjE3MSA0ODMuMjU0Wk04MDAuMDUzIDUwMi4xODEgNzg0LjU5MiA1MDIuMTgxIDc4NC41OTIgNDY4LjM5NSA3NzcuNzgxIDQ2OC4zOTUgNzc3Ljc4MSA1MDguNDggODAwLjA1MyA1MDguNDggODAwLjA1MyA1MDIuMTgxWiI+PC9wYXRoPjwvZz48L2c+PC9zdmc+"
+    },
+    {
+      "name": "Image",
+      "tileType": "IMAGE",
+      "configured": true,
+      "bounds": {
+        "top": 152,
+        "left": 0,
+        "width": 152,
+        "height": 152
+      },
+      "tileFilter": {},
+      "isAutoRefreshDisabled": false,
+      "image": "data:image/svg+xml;base64,PHN2ZyBvdmVyZmxvdz0iaGlkZGVuIiB4bWw6c3BhY2U9InByZXNlcnZlIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiBoZWlnaHQ9IjE4MiIgd2lkdGg9IjE4NCI+PGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTIwIC0yMikiPjxnPjxnPjxnPjxnPjxwYXRoIHRyYW5zZm9ybT0ibWF0cml4KDEuMDA1NTIgMCAwIDEgMjEgMjMpIiBmaWxsLW9wYWNpdHk9IjEiIGZpbGwtcnVsZT0ibm9uemVybyIgZmlsbD0iI0ZGMDAwMCIgZD0iTTg2LjcyOTIgMjYuMzk1OCA5NC4yNzA4IDI2LjM5NTggOTQuMjcwOCA0OS4wMjA4IDg2LjcyOTIgNDkuMDIwOFoiPjwvcGF0aD48cGF0aCB0cmFuc2Zvcm09Im1hdHJpeCgtMC43MDkwNjMgMC43MDUxNjcgLTAuNzA5MDYzIC0wLjcwNTE2NyAyODcuMDczIDIuMTQzNzEpIiBmaWxsLW9wYWNpdHk9IjEiIGZpbGwtcnVsZT0ibm9uemVybyIgZmlsbD0iI0ZGMDAwMCIgZD0iTTEyNi4yOTEgNDAuNjQ3NiAxNDcuNjU1IDQwLjY0NzYgMTQ3LjY1NSA0OC4yMDk5IDEyNi4yOTEgNDguMjA5OVoiPjwvcGF0aD48cGF0aCB0cmFuc2Zvcm09Im1hdHJpeCgtMC43MDkwNjMgMC43MDUxNjcgLTAuNzA5MDYzIC0wLjcwNTE2NyAxMjguMzk2IDY3LjI0MTEpIiBmaWxsLW9wYWNpdHk9IjEiIGZpbGwtcnVsZT0ibm9uemVybyIgZmlsbD0iI0ZGMDAwMCIgZD0iTTQwLjY0NzYgMzMuNjUyNCA0OC4yMDk5IDMzLjY1MjQgNDguMjA5OSA1NS4wMTYgNDAuNjQ3NiA1NS4wMTZaIj48L3BhdGg+PHBhdGggdHJhbnNmb3JtPSJtYXRyaXgoMS4wMDU1MiAwIDAgMSAyMSAyMykiIGZpbGwtb3BhY2l0eT0iMSIgZmlsbC1ydWxlPSJub256ZXJvIiBmaWxsPSIjRkYwMDAwIiBkPSJNMTM1Ljc1IDc5LjE4NzUgMTU0LjYwNCA3OS4xODc1IDE1NC42MDQgODYuNzI5MiAxMzUuNzUgODYuNzI5MloiPjwvcGF0aD48cGF0aCB0cmFuc2Zvcm09Im1hdHJpeCgxLjAwNTUyIDAgMCAxIDIxIDIzKSIgZmlsbC1vcGFjaXR5PSIxIiBmaWxsLXJ1bGU9Im5vbnplcm8iIGZpbGw9IiNGRjAwMDAiIGQ9Ik0yNi4zOTU4IDc5LjE4NzUgNDUuMjUgNzkuMTg3NSA0NS4yNSA4Ni43MjkyIDI2LjM5NTggODYuNzI5MloiPjwvcGF0aD48cGF0aCB0cmFuc2Zvcm09Im1hdHJpeCgxLjAwNTUyIDAgMCAxIDIxIDIzKSIgZmlsbC1vcGFjaXR5PSIxIiBmaWxsLXJ1bGU9Im5vbnplcm8iIGZpbGw9IiNGRjAwMDAiIGQ9Ik02MC4zMzMzIDEzMS45NzkgNjYuNzQzOCA2Ny44NzUgMTE0LjA2OCA2Ny44NzUgMTIwLjY2NyAxMzEuOTc5IDYwLjMzMzMgMTMxLjk3OVpNMTQzLjI5MiAxMzEuOTc5IDEzMS45NzkgMTMxLjk3OSAxMjUuMTkyIDYzLjM1QzEyNC44MTUgNTkuNTc5MiAxMjEuNjA5IDU2LjU2MjUgMTE3LjY1IDU2LjU2MjVMNjMuMzUgNTYuNTYyNUM1OS4zOTA2IDU2LjU2MjUgNTYuMTg1NCA1OS41NzkyIDU1LjgwODMgNjMuMzVMNDkuMDIwOCAxMzEuOTc5IDM3LjcwODMgMTMxLjk3OSAzNy43MDgzIDE0My4yOTIgMjYuMzk1OCAxNDMuMjkyIDI2LjM5NTggMTU0LjYwNCAxNTQuNjA0IDE1NC42MDQgMTU0LjYwNCAxNDMuMjkyIDE0My4yOTIgMTQzLjI5MiAxNDMuMjkyIDEzMS45NzlaIj48L3BhdGg+PHBhdGggdHJhbnNmb3JtPSJtYXRyaXgoMS4wMDU1MiAwIDAgMSAyMSAyMykiIGZpbGwtb3BhY2l0eT0iMSIgZmlsbC1ydWxlPSJub256ZXJvIiBmaWxsPSIjRkYwMDAwIiBkPSJNOTkuNTUgNzUuNDE2NyAxMDQuMjY0IDEyNC40MzggMTExLjk5NCAxMjQuNDM4IDEwNy4wOTIgNzUuNDE2N1oiPjwvcGF0aD48L2c+PC9nPjwvZz48L2c+PC9nPjwvc3ZnPg=="
+    },
+    {
+      "name": "Image",
+      "tileType": "IMAGE",
+      "configured": true,
+      "bounds": {
+        "top": 0,
+        "left": 0,
+        "width": 152,
+        "height": 114
+      },
+      "tileFilter": {},
+      "isAutoRefreshDisabled": false,
+      "image": "data:image/webp;base64,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"
+    }
+  ]
+}

@@ -1,0 +1,782 @@
+{
+  "metadata": {
+    "configurationVersions": [
+      7
+    ],
+    "clusterVersion": "1.303.42.20241021-231645"
+  },
+  "id": "60827a8a-ab6c-4ed6-93bd-a687d370b13b",
+  "dashboardMetadata": {
+    "name": "Site Reliability Engineering SLOs",
+    "shared": true,
+    "owner": "nikhil.goenka@dynatrace.com",
+    "popularity": 1,
+    "hasConsistentColors": false
+  },
+  "tiles": [
+    {
+      "name": "Service-level objective",
+      "tileType": "SLO",
+      "configured": true,
+      "bounds": {
+        "top": 190,
+        "left": 494,
+        "width": 152,
+        "height": 152
+      },
+      "tileFilter": {
+        "timeframe": "-1d"
+      },
+      "isAutoRefreshDisabled": false,
+      "assignedEntities": [
+        "2f5edd6f-bca8-3058-8f42-db98673f3cfb"
+      ],
+      "metric": "METRICS=true;LEGEND=true;PROBLEMS=true;decimals=10;customTitle=Performance Objective www.angular.easytravel.com;"
+    },
+    {
+      "name": "Service-level objective",
+      "tileType": "SLO",
+      "configured": true,
+      "bounds": {
+        "top": 342,
+        "left": 494,
+        "width": 152,
+        "height": 152
+      },
+      "tileFilter": {
+        "timeframe": "-1d"
+      },
+      "isAutoRefreshDisabled": false,
+      "assignedEntities": [
+        "72864468-1d3f-3a7f-94ba-5d712813ac53"
+      ],
+      "metric": "METRICS=true;LEGEND=true;PROBLEMS=true;decimals=10;customTitle=Performance Objective www.gcp.hipstershop.com;"
+    },
+    {
+      "name": "Service-level objective",
+      "tileType": "SLO",
+      "configured": true,
+      "bounds": {
+        "top": 646,
+        "left": 0,
+        "width": 304,
+        "height": 152
+      },
+      "tileFilter": {
+        "timeframe": "-1d"
+      },
+      "isAutoRefreshDisabled": false,
+      "assignedEntities": [
+        "0c0be821-bc71-3adf-bee4-f9f5e69b8234"
+      ],
+      "metric": "METRICS=true;LEGEND=true;PROBLEMS=true;decimals=10;customTitle=Performance Objective www.vmware.easytravel.com;"
+    },
+    {
+      "name": "Service-level objective",
+      "tileType": "SLO",
+      "configured": true,
+      "bounds": {
+        "top": 646,
+        "left": 304,
+        "width": 190,
+        "height": 152
+      },
+      "tileFilter": {
+        "timeframe": "-24h to now"
+      },
+      "isAutoRefreshDisabled": false,
+      "assignedEntities": [
+        "76492499-f632-32ab-8544-e398d9f7e21f"
+      ],
+      "metric": "METRICS=true;LEGEND=true;PROBLEMS=true;decimals=10;customTitle=Performance Objective www.weather.easytravel.com;"
+    },
+    {
+      "name": "Service availability",
+      "tileType": "HEADER",
+      "configured": true,
+      "bounds": {
+        "top": 152,
+        "left": 684,
+        "width": 304,
+        "height": 38
+      },
+      "tileFilter": {},
+      "isAutoRefreshDisabled": false
+    },
+    {
+      "name": "Service performance",
+      "tileType": "HEADER",
+      "configured": true,
+      "bounds": {
+        "top": 76,
+        "left": 1330,
+        "width": 304,
+        "height": 38
+      },
+      "tileFilter": {},
+      "isAutoRefreshDisabled": false
+    },
+    {
+      "name": "Service-level objective",
+      "tileType": "SLO",
+      "configured": true,
+      "bounds": {
+        "top": 494,
+        "left": 684,
+        "width": 152,
+        "height": 152
+      },
+      "tileFilter": {
+        "timeframe": "-1d"
+      },
+      "isAutoRefreshDisabled": false,
+      "assignedEntities": [
+        "6d60f5e5-f831-3461-a94d-5b8faa0ce1c7"
+      ],
+      "metric": "METRICS=true;LEGEND=true;PROBLEMS=true;decimals=10;customTitle=Service Availability AuthenticationService;"
+    },
+    {
+      "name": "Service-level objective",
+      "tileType": "SLO",
+      "configured": true,
+      "bounds": {
+        "top": 266,
+        "left": 1330,
+        "width": 304,
+        "height": 152
+      },
+      "tileFilter": {
+        "timeframe": "-1d"
+      },
+      "isAutoRefreshDisabled": false,
+      "assignedEntities": [
+        "ebc44614-189d-3de2-9417-ee2ca59403ab"
+      ],
+      "metric": "METRICS=true;LEGEND=true;PROBLEMS=true;decimals=10;customTitle=Service Performance BookingService;"
+    },
+    {
+      "name": "Service-level objective",
+      "tileType": "SLO",
+      "configured": true,
+      "bounds": {
+        "top": 418,
+        "left": 1330,
+        "width": 304,
+        "height": 152
+      },
+      "tileFilter": {
+        "timeframe": "-1d"
+      },
+      "isAutoRefreshDisabled": false,
+      "assignedEntities": [
+        "a9185d9a-b0a3-3f2c-8cc8-9f97e9ef5837"
+      ],
+      "metric": "METRICS=true;LEGEND=true;PROBLEMS=true;decimals=10;customTitle=Service Performance CheckDestination;"
+    },
+    {
+      "name": "Service-level objective",
+      "tileType": "SLO",
+      "configured": true,
+      "bounds": {
+        "top": 570,
+        "left": 1330,
+        "width": 304,
+        "height": 152
+      },
+      "tileFilter": {
+        "timeframe": "-1d"
+      },
+      "isAutoRefreshDisabled": false,
+      "assignedEntities": [
+        "ce99b98d-0e40-30a2-a876-ea5e39e344b1"
+      ],
+      "metric": "METRICS=true;LEGEND=true;PROBLEMS=true;decimals=10;customTitle=Service Performance CreditCardValidation;"
+    },
+    {
+      "name": "Service-level objective",
+      "tileType": "SLO",
+      "configured": true,
+      "bounds": {
+        "top": 114,
+        "left": 1330,
+        "width": 152,
+        "height": 152
+      },
+      "tileFilter": {
+        "timeframe": "-1d"
+      },
+      "isAutoRefreshDisabled": false,
+      "assignedEntities": [
+        "85860442-e655-3c0b-b367-fe1c311facf4"
+      ],
+      "metric": "METRICS=true;LEGEND=true;PROBLEMS=true;decimals=10;customTitle=Service Performance AuthenticationService;"
+    },
+    {
+      "name": "Service-level objective",
+      "tileType": "SLO",
+      "configured": true,
+      "bounds": {
+        "top": 494,
+        "left": 988,
+        "width": 304,
+        "height": 152
+      },
+      "tileFilter": {
+        "timeframe": "-1d"
+      },
+      "isAutoRefreshDisabled": false,
+      "assignedEntities": [
+        "6d60f5e5-f831-3461-a94d-5b8faa0ce1c7"
+      ],
+      "metric": "METRICS=true;LEGEND=true;PROBLEMS=true;decimals=10;customTitle=Service Availability AuthenticationService;"
+    },
+    {
+      "name": "Service-level objective",
+      "tileType": "SLO",
+      "configured": true,
+      "bounds": {
+        "top": 646,
+        "left": 684,
+        "width": 304,
+        "height": 152
+      },
+      "tileFilter": {
+        "timeframe": "-1d"
+      },
+      "isAutoRefreshDisabled": false,
+      "assignedEntities": [
+        "fec34353-15b7-374e-8831-74a3e9b81bb5"
+      ],
+      "metric": "METRICS=true;LEGEND=true;PROBLEMS=true;decimals=10;customTitle=Service Availability JourneyService;"
+    },
+    {
+      "name": "Service-level objective",
+      "tileType": "SLO",
+      "configured": true,
+      "bounds": {
+        "top": 646,
+        "left": 988,
+        "width": 304,
+        "height": 152
+      },
+      "tileFilter": {
+        "timeframe": "-1d"
+      },
+      "isAutoRefreshDisabled": false,
+      "assignedEntities": [
+        "6252c533-587c-384e-a45e-1b77af6031a6"
+      ],
+      "metric": "METRICS=true;LEGEND=true;PROBLEMS=true;decimals=10;customTitle=Service Availability BookingService;"
+    },
+    {
+      "name": "Service-level objective",
+      "tileType": "SLO",
+      "configured": true,
+      "bounds": {
+        "top": 494,
+        "left": 836,
+        "width": 152,
+        "height": 152
+      },
+      "tileFilter": {
+        "timeframe": "-1d"
+      },
+      "isAutoRefreshDisabled": false,
+      "assignedEntities": [
+        "fec34353-15b7-374e-8831-74a3e9b81bb5"
+      ],
+      "metric": "METRICS=true;LEGEND=true;PROBLEMS=true;decimals=10;customTitle=Service Availability JourneyService;"
+    },
+    {
+      "name": "Service-level objective",
+      "tileType": "SLO",
+      "configured": true,
+      "bounds": {
+        "top": 114,
+        "left": 1482,
+        "width": 152,
+        "height": 152
+      },
+      "tileFilter": {
+        "timeframe": "-1d"
+      },
+      "isAutoRefreshDisabled": false,
+      "assignedEntities": [
+        "ebc44614-189d-3de2-9417-ee2ca59403ab"
+      ],
+      "metric": "METRICS=true;LEGEND=true;PROBLEMS=true;decimals=10;customTitle=Service Performance BookingService;"
+    },
+    {
+      "name": "World map",
+      "tileType": "APPLICATION_WORLDMAP",
+      "configured": true,
+      "bounds": {
+        "top": 190,
+        "left": 0,
+        "width": 494,
+        "height": 456
+      },
+      "tileFilter": {
+        "timeframe": "Last 2 hours"
+      },
+      "isAutoRefreshDisabled": false,
+      "assignedEntities": [
+        "GEOLOCATION-0000000000000000",
+        "WORLD"
+      ],
+      "metric": "APDEX"
+    },
+    {
+      "name": "Service health",
+      "tileType": "SERVICES",
+      "configured": true,
+      "bounds": {
+        "top": 190,
+        "left": 684,
+        "width": 608,
+        "height": 304
+      },
+      "tileFilter": {},
+      "isAutoRefreshDisabled": false,
+      "chartVisible": true
+    },
+    {
+      "name": "Service-level objective",
+      "tileType": "SLO",
+      "configured": true,
+      "bounds": {
+        "top": 494,
+        "left": 494,
+        "width": 152,
+        "height": 152
+      },
+      "tileFilter": {
+        "timeframe": "-1w"
+      },
+      "isAutoRefreshDisabled": false,
+      "assignedEntities": [
+        "ce2ea422-2364-3dd2-bb04-46dba36f44bc"
+      ],
+      "metric": "METRICS=true;LEGEND=true;PROBLEMS=true;decimals=10;customTitle=Carts Service;"
+    },
+    {
+      "name": "30 days",
+      "tileType": "HEADER",
+      "configured": true,
+      "bounds": {
+        "top": 874,
+        "left": 912,
+        "width": 304,
+        "height": 38
+      },
+      "tileFilter": {},
+      "isAutoRefreshDisabled": false
+    },
+    {
+      "name": "Service-level objective",
+      "tileType": "SLO",
+      "configured": true,
+      "bounds": {
+        "top": 912,
+        "left": 912,
+        "width": 304,
+        "height": 152
+      },
+      "tileFilter": {
+        "timeframe": "-30d to now"
+      },
+      "isAutoRefreshDisabled": false,
+      "assignedEntities": [
+        "ce2ea422-2364-3dd2-bb04-46dba36f44bc"
+      ],
+      "metric": "METRICS=true;LEGEND=true;PROBLEMS=true;decimals=10;customTitle=Carts Service;"
+    },
+    {
+      "name": "7 days",
+      "tileType": "HEADER",
+      "configured": true,
+      "bounds": {
+        "top": 874,
+        "left": 608,
+        "width": 304,
+        "height": 38
+      },
+      "tileFilter": {},
+      "isAutoRefreshDisabled": false
+    },
+    {
+      "name": "Service-level objective",
+      "tileType": "SLO",
+      "configured": true,
+      "bounds": {
+        "top": 912,
+        "left": 608,
+        "width": 304,
+        "height": 152
+      },
+      "tileFilter": {
+        "timeframe": "-7d to now"
+      },
+      "isAutoRefreshDisabled": false,
+      "assignedEntities": [
+        "ce2ea422-2364-3dd2-bb04-46dba36f44bc"
+      ],
+      "metric": "METRICS=true;LEGEND=true;PROBLEMS=true;decimals=10;customTitle=Carts Service;"
+    },
+    {
+      "name": "24h",
+      "tileType": "HEADER",
+      "configured": true,
+      "bounds": {
+        "top": 874,
+        "left": 304,
+        "width": 304,
+        "height": 38
+      },
+      "tileFilter": {},
+      "isAutoRefreshDisabled": false
+    },
+    {
+      "name": "Service-level objective",
+      "tileType": "SLO",
+      "configured": true,
+      "bounds": {
+        "top": 912,
+        "left": 304,
+        "width": 304,
+        "height": 152
+      },
+      "tileFilter": {
+        "timeframe": "-24h to now"
+      },
+      "isAutoRefreshDisabled": false,
+      "assignedEntities": [
+        "ce2ea422-2364-3dd2-bb04-46dba36f44bc"
+      ],
+      "metric": "METRICS=true;LEGEND=true;PROBLEMS=true;decimals=10;customTitle=Carts Service;"
+    },
+    {
+      "name": "Live",
+      "tileType": "HEADER",
+      "configured": true,
+      "bounds": {
+        "top": 874,
+        "left": 0,
+        "width": 304,
+        "height": 38
+      },
+      "tileFilter": {},
+      "isAutoRefreshDisabled": false
+    },
+    {
+      "name": "Service-level objective",
+      "tileType": "SLO",
+      "configured": true,
+      "bounds": {
+        "top": 912,
+        "left": 0,
+        "width": 304,
+        "height": 152
+      },
+      "tileFilter": {
+        "timeframe": "-1h"
+      },
+      "isAutoRefreshDisabled": false,
+      "assignedEntities": [
+        "ce2ea422-2364-3dd2-bb04-46dba36f44bc"
+      ],
+      "metric": "METRICS=true;LEGEND=true;PROBLEMS=true;decimals=10;customTitle=Carts Service;"
+    },
+    {
+      "name": "Shopping Cart Service Performance SLO",
+      "tileType": "HEADER",
+      "configured": true,
+      "bounds": {
+        "top": 836,
+        "left": 0,
+        "width": 1216,
+        "height": 38
+      },
+      "tileFilter": {},
+      "isAutoRefreshDisabled": false
+    },
+    {
+      "name": "30 days",
+      "tileType": "HEADER",
+      "configured": true,
+      "bounds": {
+        "top": 1102,
+        "left": 912,
+        "width": 304,
+        "height": 38
+      },
+      "tileFilter": {},
+      "isAutoRefreshDisabled": false
+    },
+    {
+      "name": "Service-level objective",
+      "tileType": "SLO",
+      "configured": true,
+      "bounds": {
+        "top": 1140,
+        "left": 912,
+        "width": 304,
+        "height": 152
+      },
+      "tileFilter": {
+        "timeframe": "-30d to now"
+      },
+      "isAutoRefreshDisabled": false,
+      "assignedEntities": [
+        "d59d614a-7ba8-377d-9c1c-b81ae49220d8"
+      ],
+      "metric": "METRICS=true;LEGEND=true;PROBLEMS=true;decimals=10;customTitle=Service Performance JourneyService;"
+    },
+    {
+      "name": "7 days",
+      "tileType": "HEADER",
+      "configured": true,
+      "bounds": {
+        "top": 1102,
+        "left": 608,
+        "width": 304,
+        "height": 38
+      },
+      "tileFilter": {},
+      "isAutoRefreshDisabled": false
+    },
+    {
+      "name": "Service-level objective",
+      "tileType": "SLO",
+      "configured": true,
+      "bounds": {
+        "top": 1140,
+        "left": 608,
+        "width": 304,
+        "height": 152
+      },
+      "tileFilter": {
+        "timeframe": "-7d to now"
+      },
+      "isAutoRefreshDisabled": false,
+      "assignedEntities": [
+        "d59d614a-7ba8-377d-9c1c-b81ae49220d8"
+      ],
+      "metric": "METRICS=true;LEGEND=true;PROBLEMS=true;decimals=10;customTitle=Service Performance JourneyService;"
+    },
+    {
+      "name": "24h",
+      "tileType": "HEADER",
+      "configured": true,
+      "bounds": {
+        "top": 1102,
+        "left": 304,
+        "width": 304,
+        "height": 38
+      },
+      "tileFilter": {},
+      "isAutoRefreshDisabled": false
+    },
+    {
+      "name": "Service-level objective",
+      "tileType": "SLO",
+      "configured": true,
+      "bounds": {
+        "top": 1140,
+        "left": 304,
+        "width": 304,
+        "height": 152
+      },
+      "tileFilter": {
+        "timeframe": "-24h to now"
+      },
+      "isAutoRefreshDisabled": false,
+      "assignedEntities": [
+        "d59d614a-7ba8-377d-9c1c-b81ae49220d8"
+      ],
+      "metric": "METRICS=true;LEGEND=true;PROBLEMS=true;decimals=10;customTitle=Service Performance JourneyService;"
+    },
+    {
+      "name": "Current",
+      "tileType": "HEADER",
+      "configured": true,
+      "bounds": {
+        "top": 1102,
+        "left": 0,
+        "width": 304,
+        "height": 38
+      },
+      "tileFilter": {},
+      "isAutoRefreshDisabled": false
+    },
+    {
+      "name": "Service-level objective",
+      "tileType": "SLO",
+      "configured": true,
+      "bounds": {
+        "top": 1140,
+        "left": 0,
+        "width": 304,
+        "height": 152
+      },
+      "tileFilter": {
+        "timeframe": "-1h"
+      },
+      "isAutoRefreshDisabled": false,
+      "assignedEntities": [
+        "d59d614a-7ba8-377d-9c1c-b81ae49220d8"
+      ],
+      "metric": "METRICS=true;LEGEND=true;PROBLEMS=true;decimals=10;customTitle=Service Performance JourneyService;"
+    },
+    {
+      "name": "Journey Search Service Availability SLO",
+      "tileType": "HEADER",
+      "configured": true,
+      "bounds": {
+        "top": 1064,
+        "left": 0,
+        "width": 1216,
+        "height": 38
+      },
+      "tileFilter": {},
+      "isAutoRefreshDisabled": false
+    },
+    {
+      "name": "Open Security Problems by",
+      "tileType": "DATA_EXPLORER",
+      "configured": true,
+      "bounds": {
+        "top": 760,
+        "left": 1330,
+        "width": 304,
+        "height": 152
+      },
+      "tileFilter": {},
+      "isAutoRefreshDisabled": false,
+      "customName": "Data explorer results",
+      "queries": [
+        {
+          "id": "A",
+          "metric": "builtin:security.securityProblem.open.global",
+          "spaceAggregation": "SUM",
+          "timeAggregation": "DEFAULT",
+          "splitBy": [
+            "Risk Level"
+          ],
+          "sortBy": "DESC",
+          "filterBy": {
+            "nestedFilters": [],
+            "criteria": []
+          },
+          "limit": 100,
+          "rate": "NONE",
+          "enabled": true
+        }
+      ],
+      "visualConfig": {
+        "type": "TOP_LIST",
+        "global": {
+          "hideLegend": false
+        },
+        "rules": [
+          {
+            "matcher": "A:",
+            "valueFormat": "auto",
+            "properties": {
+              "color": "RED",
+              "seriesType": "STACKED_COLUMN",
+              "alias": "Open Security Problems (global)"
+            },
+            "seriesOverrides": []
+          }
+        ],
+        "axes": {
+          "xAxis": {
+            "visible": true
+          },
+          "yAxes": []
+        },
+        "heatmapSettings": {
+          "yAxis": "VALUE"
+        },
+        "thresholds": [
+          {
+            "axisTarget": "LEFT",
+            "columnId": "Open Security Problems (global)",
+            "rules": [
+              {
+                "color": "#7dc540"
+              },
+              {
+                "color": "#f5d30f"
+              },
+              {
+                "color": "#dc172a"
+              }
+            ],
+            "queryId": "A",
+            "visible": true
+          }
+        ],
+        "tableSettings": {
+          "isThresholdBackgroundAppliedToCell": false,
+          "hiddenColumns": []
+        },
+        "graphChartSettings": {
+          "connectNulls": false
+        },
+        "honeycombSettings": {
+          "showHive": true,
+          "showLegend": true,
+          "showLabels": false
+        }
+      },
+      "queriesSettings": {
+        "resolution": ""
+      },
+      "metricExpressions": [
+        "resolution=null&(builtin:security.securityProblem.open.global:splitBy(\"Risk Level\"):sum:sort(value(sum,descending)):limit(100)):limit(100):names:fold(auto)"
+      ]
+    },
+    {
+      "name": "Image",
+      "tileType": "IMAGE",
+      "configured": true,
+      "bounds": {
+        "top": 38,
+        "left": 0,
+        "width": 152,
+        "height": 76
+      },
+      "tileFilter": {},
+      "isAutoRefreshDisabled": false,
+      "image": "data:image/webp;base64,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"
+    },
+    {
+      "name": "Treat",
+      "tileType": "HEADER",
+      "configured": true,
+      "bounds": {
+        "top": 0,
+        "left": 0,
+        "width": 152,
+        "height": 38
+      },
+      "tileFilter": {},
+      "isAutoRefreshDisabled": false
+    },
+    {
+      "name": "Application Performance SLOs",
+      "tileType": "HEADER",
+      "configured": true,
+      "bounds": {
+        "top": 152,
+        "left": 0,
+        "width": 494,
+        "height": 38
+      },
+      "tileFilter": {},
+      "isAutoRefreshDisabled": false
+    }
+  ]
+}
