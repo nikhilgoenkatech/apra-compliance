@@ -1,9 +1,9 @@
-# Dashboards JSON
+# Dashboards & Notebook JSON
 
-1. **Monitor**: JSON capturing infrastructure metrics for compliance.
+1. **Monitor**: JSON capturing infrastructure metrics for compliance (2nd gen dashboard).
 2. **Evaluate & Analyse**: Metrics for incident management, with potential enhancements for reporting vulnerability metrics.
-3. **Treat**: Metrics for Service Level Objectives (SLOs).
-4. **Record**: Link to the notebook used for housekeeping tasks.
+3. **Treat**: Metrics for Service Level Objectives (SLOs). (2nd gen dashboard)
+4. **Record**: Notebook template used for housekeeping tasks.
 
 ## Setup Instructions
 
